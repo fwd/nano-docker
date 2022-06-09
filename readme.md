@@ -2,7 +2,7 @@
   <img src="https://github.com/fwd/n2/raw/master/.github/banner.jpg" alt="Prompts" width="500" />
 </p>
 
-<h2 align="center">"1-Click" Nano Node Installation</h2>
+<h2 align="center">"1-Click" Nano Node Setup</h2>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
