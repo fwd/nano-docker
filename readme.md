@@ -2,11 +2,11 @@
   <img src="https://github.com/fwd/n2/raw/master/.github/banner.jpg" alt="Prompts" width="500" />
 </p>
 
-<h2 align="center">"1-Click" Nano Node Setup</h2>
+<h1 align="center">1-Click <a href="https://docs.nano.org/running-a-node/overview/" target="_blank">Nano Node</a></h1>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Install
+## ❯ Usage
 
 ```bash
 curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
