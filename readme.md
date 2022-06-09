@@ -10,45 +10,10 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Install
+## ❯ 1-Curl Install
 
 ```bash
 curl -L "https://github.com/fwd/nano-docker/raw/master/setup.sh" | sh
-```
-
-```bash
-sudo chmod +x /usr/local/bin/n2
-```
-
-## ❯ Usage
-
-```
-Nano.to
-  $ n2 login
-  $ n2 register
-  $ n2 account
-  $ n2 2factor
-  $ n2 logout
-
-Wallet (Cloud)
-  $ n2 balance
-  $ n2 send @esteban 0.1
-  $ n2 qrcode
-  $ n2 receive
-  $ n2 renew
-
-Blockchain 
-  $ n2 price
-
-Options
-  --help, -h  Print CLI Documentation.
-  --docs, -d  Open Nano.to Documentation.
-  --address, -h  Print you Nano address.
-  --email, -h  Print your account email.
-  --api, -h  Print CLI API KEY email.
-  --update, -u  Get latest CLI Script.
-  --version, -v  Print current CLI Version.
-  --uninstall, -u  Remove CLI from system.
 ```
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
@@ -57,7 +22,7 @@ Options
 
 Give a ⭐️ if this project helped you!
 
-Contributions, issues and feature requests are welcome at [issues page](https://github.com/fwd/n2/issues).
+Contributions, issues and feature requests are welcome at [issues page](https://github.com/fwd/nano-docker/issues).
 
 ## ❯ License
 
@@ -85,4 +50,4 @@ SOFTWARE.
 
 ## ❯ Stargazers
 
-[![Stargazers over time](https://starchart.cc/fwd/n2.svg)](https://starchart.cc/fwd/n2)
+[![Stargazers over time](https://starchart.cc/fwd/nano-docker.svg)](https://starchart.cc/fwd/nano-docker)
