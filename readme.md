@@ -6,7 +6,7 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ 1-Curl Install
+## ❯ Install
 
 ```bash
 curl -L "https://github.com/fwd/nano-docker/raw/master/setup.sh" | sh
