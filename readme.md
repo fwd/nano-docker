@@ -9,7 +9,7 @@
 ## ❯ Install
 
 ```bash
-curl -L "https://github.com/fwd/nano-docker/raw/master/setup.sh" | sh
+curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 ```
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
