@@ -5,10 +5,6 @@
 <h2 align="center">Nano Node Docker</h2>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
- 
-> ### This software installs a Live Nano Blockchain Node.
-
-![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
 ## ❯ 1-Curl Install
 
