@@ -30,17 +30,15 @@ sudo apt-get -y jq install curl p7zip-full
 # Install Docker PGP Key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
-
 # Add Remote Docker Repo Machine
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-
-# Run Update
+# Run Update (Fetch latest packages)
 sudo apt-get update
 
-# Finally, Install Docker and Dependiencies.
+# Finally, Install Docker and Dependencies.
 sudo apt-get -y install jq docker-ce docker-ce-cli containerd.io
 ```
 
@@ -49,8 +47,10 @@ sudo apt-get -y install jq docker-ce docker-ce-cli containerd.io
 ```bash
   # Download latest script.
   curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  
   # Make it executable
   sudo chmod +x /usr/local/bin/docker-compose
+  
   # Make it a global command
   sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
