@@ -17,6 +17,32 @@ curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
+
+## Requirements
+
+- Ubuntu (Supported)
+- Other Linux (Coming Soon)
+- Mac (Coming Soon)
+- Window (Coming Soon)
+
+Minimum Recommended:
+
+- 2 vCPU
+- 4GB RAM
+- 160GB SSD
+- 1TB BANDWIDTH
+- ON 24/7
+
+> We assume you know how to "Spin up" a cloud server. If not, see below.
+
+## Free Cloud Server ($100 / 3 Months)
+
+You can support Nano.to (makers of this script) by using this Digital Ocean referral link:
+
+https://m.do.co/c/f139acf4ddcb
+
+Optional reading: [How To Setup a Server on Digital Ocean](https://docs.digitalocean.com/products/droplets/how-to/create/)
+
 ## Understand The Magic (Optional)
 
 This script does A LOT. It's important to understand what is happening behind the scenes. 
@@ -75,7 +101,7 @@ sudo ./setup.sh -s -t V23.1
 
 ### 3. Launch Node (24/7)
 
-The ```/setup.sh``` contains the logic to launch Node with Docker. communication.
+The ```/setup.sh``` contains the logic to launch Node with Docker.
 
 - Script Unlocks Wallet RPC
 - ```nano-node``` is added to ~/.bash_aliases
@@ -83,9 +109,9 @@ The ```/setup.sh``` contains the logic to launch Node with Docker. communication
 
 The ```/docker-compose.yml``` for Network bindings.
 
-### 4. Test Node
+### 4. Use Node
 
-Script adds ```nano-node``` your **~/.bash_aliases** file for an easy access alias.
+This script adds a ```nano-node``` to your **~/.bash_aliases** file, for an easy Node access.
 
 ```
 $ nano-node  --help
