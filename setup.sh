@@ -200,7 +200,7 @@ sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-nod
 existedWallet="$(${nodeExec} --wallet_list | grep 'Wallet ID' | awk '{ print $NF}')"
 
 if [[ ! $existedWallet ]]; then
-    [[ $quiet = 'false' ]] && printf "=> ${yellow}No wallet found. Generating a new one... ${reset}"
+    [[ $quiet = 'false' ]] && printf "=> No wallet found. Generating a new one..."
 
     walletId=$(${nodeExec} --wallet_create | tr -d '\r')
     address="$(${nodeExec} --account_create --wallet=$walletId | awk '{ print $NF}')"
