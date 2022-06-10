@@ -72,7 +72,7 @@ if [ $? -ne 0 ]; then
     
     sudo apt-get update
     
-    sudo apt-get -y install docker-ce docker-ce-cli containerd.io
+    sudo apt-get -y install jq docker-ce docker-ce-cli containerd.io
 
 fi
 
@@ -216,4 +216,6 @@ fi
 
 echo "${yellow} Node is now active: 'https://localhost:7676' or '[::1]:7676'"
 
-echo $(curl -s -g -d '{ "action": "telemetry" }' '[::1]:7076')
+echo
+
+echo $(curl -s -g -d '{ "action": "telemetry" }' '[::1]:7076' | jq)
