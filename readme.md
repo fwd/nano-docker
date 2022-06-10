@@ -4,7 +4,7 @@
   </p>
 </a>
 
-<h1 align="center">1-Click <a href="https://docs.nano.org/running-a-node/overview/" target="_blank">Nano Node</a></h1>
+<h1 align="center">1-Click <a href="https://docs.nano.org/running-a-node/overview/" target="_blank">Nano Blockchain</a></h1>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
