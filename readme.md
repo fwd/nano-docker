@@ -57,7 +57,7 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 ### 2. Install Nano Docker
 
-Finally, after all the needed tools are installed. We can run the actual script on this Repo.
+Finally, after everything is prepared. We can run the script found on this Repo.
 
 ```bash
 # Move to HOME folder
@@ -75,7 +75,7 @@ sudo ./setup.sh -s -t V23.1
 
 ### 3. Launch Node
 
-The ```./setup.sh``` contains the logic to launch Node with Docker.
+The ```/setup.sh``` contains the logic to launch Node with Docker.
 
 - Script Unlocks Wallet RPC
 - Node Accessible @ http://localhost:7076 or [::1]:7076 for IPv6.
