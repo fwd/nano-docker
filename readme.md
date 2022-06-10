@@ -10,6 +10,8 @@
 
 ## ❯ Install
 
+> This package was created for the [N2 CLI](https://github.com/fwd/n2). It can be used independently.
+
 ```bash
 
 curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
