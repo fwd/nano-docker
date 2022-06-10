@@ -8,15 +8,54 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Usage
+## ❯ Install
 
 ```bash
+
 curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 ```
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Contributing
+## Understand The Magic (Optional)
+
+This script does A LOT. It's important to understand what is happening behind the scenes. 
+
+### 1. Installs [Docker](https://docs.docker.com/engine/install/ubuntu)
+
+```bash
+# Install Basic Tools
+sudo apt-get -y jq install curl p7zip-full
+
+# Install Docker PGP Key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+
+# Add Remote Docker Repo Machine
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+# Run Update
+sudo apt-get update
+
+# Finally, Install Docker and Dependiencies.
+sudo apt-get -y install jq docker-ce docker-ce-cli containerd.io
+```
+
+### Installs Docker Compose
+
+```bash
+  # Download latest script.
+  curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  # Make it executable
+  sudo chmod +x /usr/local/bin/docker-compose
+  # Make it a global command
+  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
+## Contributing
 
 Give a ⭐️ if this project helped you!
 
