@@ -103,8 +103,8 @@ sudo ./setup.sh -s -t V23.1
 - Node is set up on localhost port 7076. Use '[::1]:7076' for IPv6.
 - Node cannot be accessed from Internet by default. Bring your own "Proxy".
 
-- See ```/setup.sh``` for setup BASH script.
-- See ```/docker-compose.yml``` for network bindings.
+- See [setup.sh](/docker-compose.yml) for complete setup script.
+- See [docker-compose.yml](/docker-compose.yml) for network bindings created.
 
 ### 5. Test Node
 
