@@ -17,6 +17,7 @@ curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
+> This package hopes to give you access to a Live Node running on Localhost only. Not a Representative Node. A "Personal Node". If you will. 
 
 ## Requirements
 
