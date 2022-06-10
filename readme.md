@@ -92,8 +92,7 @@ cd ~ && git clone https://github.com/fwd/nano-docker.git
 # For "Docker" reasons. We need to move in the cloned dir.
 cd ~/nano-docker
 
-# Finally, run the setup script
-# Make sure you pass the latest version.
+# Always installs latest version
 sudo ./setup.sh -s -t V23.1
 ```
 
