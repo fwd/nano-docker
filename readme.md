@@ -69,11 +69,11 @@ git clone https://github.com/fwd/nano-docker.git
 # For "Docker" reasons. We need to move in the cloned dir.
 cd ~/nano-docker
 
-# Finall,y run the setup script
+# Finally, run the setup script
 sudo ./setup.sh -s -t V23.1
 ```
 
-### 3. Launch Node
+### 3. Launch Node (24/7)
 
 The ```/setup.sh``` contains the logic to launch Node with Docker.
 
