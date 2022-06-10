@@ -214,25 +214,6 @@ else
     walletId=$(echo $existedWallet | tr -d '\r')
 fi
 
-if [[ $quiet = 'false' && $displaySeed = 'true' ]]; then
-    seed=$(${nodeExec} --wallet_decrypt_unsafe --wallet=$walletId | grep 'Seed' | awk '{ print $NF}' | tr -d '\r')
-fi
+echo "${yellow} Node is now active: 'https://localhost:7676' or '[::1]:7676'"
 
-if [[ $quiet = 'false' ]]; then
-
-    echo "${yellow} |=========================================================================================| ${reset}"
-    echo "${yellow} | ${green}${bold}Congratulations! NANO Node Docker has been setup successfully!                          ${yellow}| ${reset}"
-    echo "${yellow} |=========================================================================================| ${reset}"
-    echo "${yellow} | Node account address: ${green}$address${yellow} | ${reset}"
-    if [[ $displaySeed = 'true' ]]; then
-        echo "${yellow} | Node wallet seed: ${red}$seed${yellow}      | ${reset}"
-    fi
-    echo "${yellow} |=========================================================================================| ${reset}"
-
-    echo ""
-
-    echo "${yellow} Node is now active: 'https://localhost:7676' or '[::1]:7676'"
-    
-    echo ""
-
-fi
+echo $(curl -s -g -d '{ "action": "telemetry" }' '[::1]:7076')
