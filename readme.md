@@ -25,7 +25,7 @@ curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 - Mac (Coming Soon)
 - Window (Coming Soon)
 
-Minimum Recommended:
+Minimum Specs:
 
 - 2 vCPU
 - 4GB RAM
