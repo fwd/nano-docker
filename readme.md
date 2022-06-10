@@ -32,7 +32,7 @@ Minimum Specs:
 - 1TB BANDWIDTH
 - ON 24/7
 
-> We assume you know how to "Spin up" a cloud server. If not, see below. You're also welcomed to use a home setup. Cloud is much easier, always.
+> We assume you know how to "Spin up" a cloud server. If not, see below. You can it setup up at home too. Just needs Ubuntu. 
 
 ## Free Cloud Server ($100 / 3 Months)
 
