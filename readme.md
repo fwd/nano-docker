@@ -47,7 +47,7 @@ Optional reading: [How To Setup a Server on Digital Ocean](https://docs.digitalo
 
 This script does A LOT. It's important to understand what is happening behind the scenes. 
 
-### 1. Installs [Docker](https://docs.docker.com/engine/install/ubuntu)
+### 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu)
 
 ```bash
 # Install Basic Tools
@@ -68,7 +68,7 @@ sudo apt-get update
 sudo apt-get -y install jq docker-ce docker-ce-cli containerd.io
 ```
 
-### 1. Install Docker Compose
+### 2. Install Docker Compose
 
 ```bash
 # Download latest script.
@@ -81,7 +81,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-### 2. Install Nano Docker
+### 3. Install Nano Docker
 
 Finally, after everything is prepared. We can run the script found on this Repo.
 
@@ -99,7 +99,7 @@ cd ~/nano-docker
 sudo ./setup.sh -s -t V23.1
 ```
 
-### 3. Launch Node (24/7)
+### 4. Launch Node (24/7)
 
 The ```/setup.sh``` contains the logic to launch Node with Docker.
 
@@ -109,7 +109,7 @@ The ```/setup.sh``` contains the logic to launch Node with Docker.
 
 The ```/docker-compose.yml``` for Network bindings.
 
-### 4. Use Node
+### 5. Test Node
 
 This script adds a ```nano-node``` to your **~/.bash_aliases** file, for an easy Node access.
 
