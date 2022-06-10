@@ -55,6 +55,41 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
+### Install Nano Docker
+
+Finally, after all the needed tools are installed. We can run the actual script on this Repo.
+
+```bash
+# Move to HOME folder
+cd ~
+
+# Clone this Repo
+git clone https://github.com/fwd/nano-docker.git
+
+# For "Docker" reasons. We need to move in the cloned dir.
+cd ~/nano-docker
+
+# Finall,y run the setup script
+sudo ./setup.sh -s -t V23.1
+```
+
+### Launch Node
+
+The ```./setup.sh``` contains the logic to launch Node with Docker.
+
+- Script Unlocks Wallet RPC
+- Node Accessible @ http://localhost:7076 or [::1]:7076 for IPv6.
+- SSL is NOT installed. 
+- ```nano-node``` is added to ~/.bash_aliases
+
+## Test Node
+
+You can talk to the Local node with CURL
+
+```bash
+curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
+```
+
 ## Contributing
 
 Give a ⭐️ if this project helped you!
