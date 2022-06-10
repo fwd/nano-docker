@@ -78,9 +78,10 @@ sudo ./setup.sh -s -t V23.1
 The ```/setup.sh``` contains the logic to launch Node with Docker.
 
 - Script Unlocks Wallet RPC
-- Node Accessible @ http://localhost:7076 or [::1]:7076 for IPv6.
-- SSL is NOT installed. 
 - ```nano-node``` is added to ~/.bash_aliases
+- Node runs on localhost:7076 or [::1]:7076 for IPv6.
+
+The ```/docker-compose.yml``` for Network bindings.
 
 ### 4. Test Node
 
