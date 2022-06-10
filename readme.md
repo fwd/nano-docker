@@ -90,13 +90,17 @@ You can talk to the Local node with CURL
 curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 ```
 
+## Credits
+
+- [@lephleg/nano-node-docker](https://github.com/lephleg/nano-node-docker)
+
 ## Contributing
 
 Give a ⭐️ if this project helped you!
 
 Contributions, issues and feature requests are welcome at [issues page](https://github.com/fwd/nano-docker/issues).
 
-## ❯ License
+## License
 
 MIT License
 
