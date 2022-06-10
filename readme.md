@@ -42,7 +42,7 @@ sudo apt-get update
 sudo apt-get -y install jq docker-ce docker-ce-cli containerd.io
 ```
 
-### Installs Docker Compose
+### 1. Install Docker Compose
 
 ```bash
 # Download latest script.
@@ -55,7 +55,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-### Install Nano Docker
+### 2. Install Nano Docker
 
 Finally, after all the needed tools are installed. We can run the actual script on this Repo.
 
@@ -73,7 +73,7 @@ cd ~/nano-docker
 sudo ./setup.sh -s -t V23.1
 ```
 
-### Launch Node
+### 3. Launch Node
 
 The ```./setup.sh``` contains the logic to launch Node with Docker.
 
@@ -82,7 +82,7 @@ The ```./setup.sh``` contains the logic to launch Node with Docker.
 - SSL is NOT installed. 
 - ```nano-node``` is added to ~/.bash_aliases
 
-## Test Node
+### 4. Test Node
 
 You can talk to the Local node with CURL
 
