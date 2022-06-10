@@ -75,7 +75,7 @@ sudo ./setup.sh -s -t V23.1
 
 ### 3. Launch Node (24/7)
 
-The ```/setup.sh``` contains the logic to launch Node with Docker.
+The ```/setup.sh``` contains the logic to launch Node with Docker. communication.
 
 - Script Unlocks Wallet RPC
 - ```nano-node``` is added to ~/.bash_aliases
@@ -85,11 +85,19 @@ The ```/docker-compose.yml``` for Network bindings.
 
 ### 4. Test Node
 
-You can talk to the Local node with CURL
+Script adds ```nano-node``` your **~/.bash_aliases** file for an easy access alias.
+
+```
+$ nano-node  --help
+```
+
+Or talk to the Local node with CURL.
 
 ```bash
 curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 ```
+
+All localhost. The fastest and safest method.
 
 ## Credits
 
