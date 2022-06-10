@@ -17,8 +17,6 @@ curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-> Looking to run a Representative Node? See this [original](https://github.com/lephleg/nano-node-docker/) Github. It includes SSL & NodeMonitor.
-
 ## Requirements
 
 - Ubuntu (Supported)
