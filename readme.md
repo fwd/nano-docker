@@ -86,11 +86,8 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 Finally, after everything is prepared. We can run the script found on this Repo.
 
 ```bash
-# Move to HOME folder
-cd ~
-
-# Clone this Repo
-git clone https://github.com/fwd/nano-docker.git
+# Move to HOME, and clone repo
+cd ~ && git clone https://github.com/fwd/nano-docker.git
 
 # For "Docker" reasons. We need to move in the cloned dir.
 cd ~/nano-docker
@@ -102,26 +99,26 @@ sudo ./setup.sh -s -t V23.1
 
 ### 4. Launch Node (24/7)
 
-The ```/setup.sh``` contains the logic to launch Node with Docker.
+- Script [unlocks](https://docs.nano.org/running-a-node/wallet-setup/#update-configuration) Wallet RPC.
+- Node is set up on localhost port 7076. Use '[::1]:7076' for IPv6.
 
-- Script Unlocks Wallet RPC
-- ```nano-node``` is added to ~/.bash_aliases
-- Node runs on localhost:7076 or [::1]:7076 for IPv6.
-
-The ```/docker-compose.yml``` for Network bindings.
+- See ```/setup.sh``` for setup BASH script.
+- See ```/docker-compose.yml``` for network bindings.
 
 ### 5. Test Node
 
-This script adds a ```nano-node``` to your **~/.bash_aliases** file, for an easy Node access.
+The script adds a ```nano-node``` alias to your **~/.bash_aliases** file.
 
 ```
+Usage:
 $ nano-node  --help
 ```
 
 Or talk to the Local node with CURL.
 
 ```bash
-curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
+Usage:
+$ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 ```
 
 All localhost. The fastest and safest method.
