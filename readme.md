@@ -17,7 +17,7 @@ curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-> This script installs Live Nano Node, running on Localhost. Not a Representative Node. If you're looking to run a Rep Node, see this [Github Repo](https://github.com/lephleg/nano-node-docker/). It includes SSL & NodeMonitor.
+> Looking to run a Representative Node? See this [original](https://github.com/lephleg/nano-node-docker/) Github. It includes SSL & NodeMonitor.
 
 ## Requirements
 
