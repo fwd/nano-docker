@@ -74,12 +74,14 @@ fi
 echo $@ > settings
 
 # PRINT INSTALLER DETAILS
-[[ $quiet = 'false' ]] && echo "${green} -----------------------${reset}"
+[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo "${green}${bold} 1-CLICK NANO NODE ${reset}"
-[[ $quiet = 'false' ]] && echo "${green} -----------------------${reset}"
+[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
+[[ $quiet = 'false' ]] && echo "${green}${bold}    by @nano2dev ${reset}"
+[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo ""
 
-sleep 200
+sleep 1
 
 # VERIFY TOOLS INSTALLATIONS
 docker -v &> /dev/null
