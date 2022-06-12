@@ -77,6 +77,8 @@ echo $@ > settings
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE ${reset}"
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
+[[ $quiet = 'false' ]] && echo "${green}${bold}by Nano.to ${reset}"
+[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo ""
 
 sleep 1
@@ -251,3 +253,4 @@ $ nano-node --help
 Curl
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'                         
 EOF
+exit 1
