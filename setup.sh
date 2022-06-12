@@ -209,12 +209,14 @@ if [ -f ~/.bash_aliases ]; then
     alias=$(cat ~/.bash_aliases | grep 'nano-node');
     if [[ ! $alias ]]; then
         echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
-        source ~/.bashrc;
     fi
 else
     echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
-    source ~/.bashrc;
 fi
+
+sleep 1
+
+source ~/.bash_aliases;
 
 # WALLET SETUP
 sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-node/Nano/config-rpc.toml
