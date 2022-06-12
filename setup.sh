@@ -206,20 +206,6 @@ done
 
 nodeExec="docker exec -it nano-node /usr/bin/nano_node"
 
-# SET BASH ALIASES FOR NODE CLI
-if [ -f ~/.bash_aliases ]; then
-    alias=$(cat ~/.bash_aliases | grep 'nano-node');
-    if [[ ! $alias ]]; then
-        echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
-    fi
-else
-    echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
-fi
-
-sleep 1
-
-source ~/.bash_aliases;
-
 # WALLET SETUP
 sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-node/Nano/config-rpc.toml
 
@@ -253,4 +239,20 @@ $ nano-node --help
 Curl
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'                         
 EOF
+
+# At the end for good luck.
+# SET BASH ALIASES FOR NODE CLI
+if [ -f ~/.bash_aliases ]; then
+    alias=$(cat ~/.bash_aliases | grep 'nano-node');
+    if [[ ! $alias ]]; then
+        echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
+    fi
+else
+    echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
+fi
+
+sleep 1
+
+source ~/.bash_aliases
+
 exit 1
