@@ -194,7 +194,6 @@ else
 fi
 
 # WALLET SETUP
-
 sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-node/Nano/config-rpc.toml
 
 existedWallet="$(${nodeExec} --wallet_list | grep 'Wallet ID' | awk '{ print $NF}')"
@@ -214,8 +213,20 @@ else
     walletId=$(echo $existedWallet | tr -d '\r')
 fi
 
-echo "${yellow} Node is now active: 'https://localhost:7676' or '[::1]:7676'"
+ipAddress=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
 
-echo
-
-echo $(curl -s -g -d '{ "action": "telemetry" }' '[::1]:7076' | jq)
+echo "=========================================="
+echo "             Welcome to Nano              "
+echo "=========================================="
+echo "'http://$ipAddress:7676' or '[::1]:7676'  "
+if [[ $quiet = 'false' && $displaySeed = 'true' ]]; then
+address="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
+seed=$(${nodeExec} --wallet_decrypt_unsafe --wallet=$walletId | grep 'Seed' | awk '{ print $NF}' | tr -d '\r')
+echo "=========================================="
+echo "ADDRESS: " $address
+echo "SECRET: " $seed                      
+echo "=========================================="
+fi
+echo "=========================================="
+echo "Node CLI: https://github.com/fwd/n2"
+echo "=========================================="
