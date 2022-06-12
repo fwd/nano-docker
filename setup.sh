@@ -75,9 +75,7 @@ echo $@ > settings
 
 # PRINT INSTALLER DETAILS
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
-[[ $quiet = 'false' ]] && echo "${green}${bold} 1-CLICK NANO NODE ${reset}"
-[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
-[[ $quiet = 'false' ]] && echo "${green}${bold}    by @nano2dev ${reset}"
+[[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE ${reset}"
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo ""
 
