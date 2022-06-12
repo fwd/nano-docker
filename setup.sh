@@ -226,15 +226,15 @@ sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-nod
 existedWallet="$(${nodeExec} --wallet_list | grep 'Wallet ID' | awk '{ print $NF}')"
 
 if [[ ! $existedWallet ]]; then
-    [[ $quiet = 'false' ]] && printf "=> No wallet found. Generating a new one..."
+    # [[ $quiet = 'false' ]] && printf "=> No wallet found. Generating a new one..."
     walletId=$(${nodeExec} --wallet_create | tr -d '\r')
     sleep 1
     address="$(${nodeExec} --account_create --wallet=$walletId | awk '{ print $NF}')"
     sleep 1
     [[ $quiet = 'false' ]] && printf "${green}done.${reset}\n\n"
 else
-    [[ $quiet = 'false' ]] && echo "=> ${yellow}Existing wallet found.${reset}"
-    [[ $quiet = 'false' ]] && echo ''
+    # [[ $quiet = 'false' ]] && echo "=> ${yellow}Existing wallet found.${reset}"
+    # [[ $quiet = 'false' ]] && echo ''
     address="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
     sleep 1
     walletId=$(echo $existedWallet | tr -d '\r')
@@ -246,6 +246,7 @@ echo "=========================================="
 echo "   http://localhost:7676 or [::1]:7076    "
 echo "=========================================="
 cat <<EOF
+
 Usage:
 $ nano-node --help   
 
