@@ -178,64 +178,45 @@ done
 
 [[ $quiet = 'false' ]] && printf "${green}done.${reset}\n\n"
 
-# DETERMINE NODE VERSION
-nodeExec="docker exec -it nano-node /usr/bin/nano_node"
-
-# SET BASH ALIASES FOR NODE CLI
-if [ -f ~/.bash_aliases ]; then
-    alias=$(cat ~/.bash_aliases | grep 'nano-node');
-    if [[ ! $alias ]]; then
-        echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
-        source ~/.bashrc;
-    fi
-else
-    echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
-    source ~/.bashrc;
-fi
-
-sleep 5
-
 # WALLET SETUP
 sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-node/Nano/config-rpc.toml
+
+nodeExec="docker exec -it nano-node /usr/bin/nano_node"
 
 existedWallet="$(${nodeExec} --wallet_list | grep 'Wallet ID' | awk '{ print $NF}')"
 
 if [[ ! $existedWallet ]]; then
     [[ $quiet = 'false' ]] && printf "=> No wallet found. Generating a new one..."
-
     walletId=$(${nodeExec} --wallet_create | tr -d '\r')
-
     sleep 1
-
     address="$(${nodeExec} --account_create --wallet=$walletId | awk '{ print $NF}')"
-    
+    sleep 1
     [[ $quiet = 'false' ]] && printf "${green}done.${reset}\n\n"
 else
     [[ $quiet = 'false' ]] && echo "=> ${yellow}Existing wallet found.${reset}"
     [[ $quiet = 'false' ]] && echo ''
-
     address="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
     sleep 1
     walletId=$(echo $existedWallet | tr -d '\r')
 fi
 
 echo "=========================================="
-echo "             Welcome to Nano              "
+echo "        Welcome to the Blockchain         "
 echo "=========================================="
-echo "'http://localhost:7676' or '[::1]:7676'  "
-if [[ $quiet = 'false' && $displaySeed = 'true' ]]; then
-address="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
+
+ADDRESS="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
+
 sleep 1
-seed=$(${nodeExec} --wallet_decrypt_unsafe --wallet=$walletId | grep 'Seed' | awk '{ print $NF}' | tr -d '\r')
+if [[ $displaySeed = 'true' ]]; then
+echo "=========================================="
+WALLET="$(${nodeExec} --wallet_list | grep 'Wallet ID' | awk '{ print $NF}')"
+SEED=$(${nodeExec} --wallet_decrypt_unsafe --wallet=$walleWALLETtId | grep 'Seed' | awk '{ print $NF}' | tr -d '\r')
 sleep 1
-echo "=========================================="
-echo "ADDRESS: " $address
-echo "SECRET: " $seed                      
-echo "=========================================="
+echo "WALLET: " $WALLET
+echo "ADDRESS: " $ADDRESS
+echo "SECRET: " $seed
 fi
-echo "Node CLI: https://github.com/fwd/n2"
+echo "=========================================="
+echo "Local Node: 'http://localhost:7676'       "
 echo "=========================================="
 curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
-
-# docker exec -it nano-node /usr/bin/nano_node --wallet_list | grep 'Wallet ID' | awk '{ print $NF}'
-# docker exec -it nano-node /usr/bin/nano_node --wallet_create
