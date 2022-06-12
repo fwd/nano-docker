@@ -193,6 +193,8 @@ else
     source ~/.bashrc;
 fi
 
+sleep 5
+
 # WALLET SETUP
 sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-node/Nano/config-rpc.toml
 
@@ -202,6 +204,9 @@ if [[ ! $existedWallet ]]; then
     [[ $quiet = 'false' ]] && printf "=> No wallet found. Generating a new one..."
 
     walletId=$(${nodeExec} --wallet_create | tr -d '\r')
+
+    sleep 1
+
     address="$(${nodeExec} --account_create --wallet=$walletId | awk '{ print $NF}')"
     
     [[ $quiet = 'false' ]] && printf "${green}done.${reset}\n\n"
@@ -210,23 +215,27 @@ else
     [[ $quiet = 'false' ]] && echo ''
 
     address="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
+    sleep 1
     walletId=$(echo $existedWallet | tr -d '\r')
 fi
-
-ipAddress=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
 
 echo "=========================================="
 echo "             Welcome to Nano              "
 echo "=========================================="
-echo "'http://$ipAddress:7676' or '[::1]:7676'  "
+echo "'http://localhost:7676' or '[::1]:7676'  "
 if [[ $quiet = 'false' && $displaySeed = 'true' ]]; then
 address="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
+sleep 1
 seed=$(${nodeExec} --wallet_decrypt_unsafe --wallet=$walletId | grep 'Seed' | awk '{ print $NF}' | tr -d '\r')
+sleep 1
 echo "=========================================="
 echo "ADDRESS: " $address
 echo "SECRET: " $seed                      
 echo "=========================================="
 fi
-echo "=========================================="
 echo "Node CLI: https://github.com/fwd/n2"
 echo "=========================================="
+curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
+
+# docker exec -it nano-node /usr/bin/nano_node --wallet_list | grep 'Wallet ID' | awk '{ print $NF}'
+# docker exec -it nano-node /usr/bin/nano_node --wallet_create
