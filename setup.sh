@@ -206,10 +206,22 @@ done
 
 [[ $quiet = 'false' ]] && printf "${green}done.${reset}\n\n"
 
+nodeExec="docker exec -it nano-node /usr/bin/nano_node"
+
+# SET BASH ALIASES FOR NODE CLI
+if [ -f ~/.bash_aliases ]; then
+    alias=$(cat ~/.bash_aliases | grep 'nano-node');
+    if [[ ! $alias ]]; then
+        echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
+        source ~/.bashrc;
+    fi
+else
+    echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
+    source ~/.bashrc;
+fi
+
 # WALLET SETUP
 sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-node/Nano/config-rpc.toml
-
-nodeExec="docker exec -it nano-node /usr/bin/nano_node"
 
 existedWallet="$(${nodeExec} --wallet_list | grep 'Wallet ID' | awk '{ print $NF}')"
 
