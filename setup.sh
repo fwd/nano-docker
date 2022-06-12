@@ -43,6 +43,34 @@ while getopts 'sqfd:e:t:' flag; do
   esac
 done
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo ""
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "Operating system not supported."
+    exit 1
+  # Mac OSX
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+    echo "Operating system not supported."
+    exit 1
+  # POSIX compatibility layer and Linux environment emulation for Windows
+elif [[ "$OSTYPE" == "msys" ]]; then
+    echo "Operating system not supported."
+    exit 1
+  # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+elif [[ "$OSTYPE" == "win32" ]]; then
+  # I'm not sure this can happen.
+    echo "Operating system not supported."
+    exit 1
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  # ...
+    echo "Operating system not supported."
+    exit 1
+else
+   # Unknown.
+    echo "Operating system not supported."
+    exit 1
+fi
+
 echo $@ > settings
 
 # PRINT INSTALLER DETAILS
