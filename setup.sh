@@ -236,8 +236,10 @@ cat <<EOF
 Usage:
 $ nano-node --help   
 
-Curl
-$ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'                         
+Curl: 
+$ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'   
+
+You might need to run: source ~/.bash_aliases
 EOF
 
 # At the end for good luck.
@@ -250,9 +252,5 @@ if [ -f ~/.bash_aliases ]; then
 else
     echo "alias nano-node='${nodeExec}'" >> ~/.bash_aliases;
 fi
-
-sleep 1
-
-source ~/.bash_aliases
 
 exit 1
