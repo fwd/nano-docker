@@ -203,20 +203,12 @@ fi
 echo "=========================================="
 echo "        Welcome to the Blockchain         "
 echo "=========================================="
+echo "   http://localhost:7676 or [::1]:7076    "
+echo "=========================================="
+cat <<EOF
+Usage:
+$ nano-node --help   
 
-ADDRESS="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
-
-sleep 1
-if [[ $displaySeed = 'true' ]]; then
-echo "=========================================="
-WALLET="$(${nodeExec} --wallet_list | grep 'Wallet ID' | awk '{ print $NF}')"
-SEED=$(${nodeExec} --wallet_decrypt_unsafe --wallet=$walleWALLETtId | grep 'Seed' | awk '{ print $NF}' | tr -d '\r')
-sleep 1
-echo "WALLET: " $WALLET
-echo "ADDRESS: " $ADDRESS
-echo "SECRET: " $seed
-fi
-echo "=========================================="
-echo "Local Node: 'http://localhost:7676'       "
-echo "=========================================="
-curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
+Curl
+$ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'                         
+EOF
