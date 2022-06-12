@@ -173,7 +173,7 @@ if [ -d "./nano-node" ]; then
 fi
 
 # SPIN UP THE APPROPRIATE STACK
-[[ $quiet = 'false' ]] && echo "=> ${yellow}Pulling images and spinning up containers...${reset}"
+[[ $quiet = 'false' ]] && echo "=> Pulling images and spinning up containers..."
 [[ $quiet = 'false' ]] && echo ""
 
 docker network create nano-node-network &> /dev/null
@@ -193,18 +193,12 @@ if [ $? -ne 0 ]; then
     exit 2
 fi
 
-# CHECK NODE INITIALIZATION
-[[ $quiet = 'false' ]] && echo ""
-[[ $quiet = 'false' ]] && printf "=> ${yellow}Waiting for NANO node to fully initialize... "
-
 isRpcLive="$(curl -s -d '{"action": "version"}' [::1]:7076 | grep "rpc_version")"
 while [ ! -n "$isRpcLive" ];
 do
     sleep 1s
     isRpcLive="$(curl -s -d '{"action": "version"}' [::1]:7076 | grep "rpc_version")"
 done
-
-[[ $quiet = 'false' ]] && printf "${green}done.${reset}\n\n"
 
 nodeExec="docker exec -it nano-node /usr/bin/nano_node"
 
