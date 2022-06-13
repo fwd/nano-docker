@@ -1,2 +1,2 @@
 git clone https://github.com/fwd/nano-docker.git
-sudo ./setup.sh -s -t V23.1
+sudo ./setup.sh -v V23.1
