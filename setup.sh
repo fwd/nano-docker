@@ -39,6 +39,7 @@ while getopts 'sqfd:e:t:' flag; do
     q) quiet='true' ;;
     f) fastSync='true' ;;
     t) tag="${OPTARG}" ;;
+    v) tag="${OPTARG}" ;;
     *) exit 1 ;;
   esac
 done
