@@ -14,8 +14,9 @@
 version='0.1'
 
 # FAST-SYNC DOWNLOAD LINK
-ledgerDownloadLink="https://s3.us-east-2.amazonaws.com/repo.nano.org/snapshots/Nano_64_2022_05_28_22.7z"
-# ledgerDownloadLink="https://s3.us-east-2.amazonaws.com/repo.nano.org/snapshots/Nano_64_$(date +%Y)_01_20_23.7z"
+# BIG THANKS TO @ThiagoSFS
+ledgerDownloadLink=$(curl 'https://s3.us-east-2.amazonaws.com/repo.nano.org/snapshots/latest')
+# ledgerDownloadLink="https://s3.us-east-2.amazonaws.com/repo.nano.org/snapshots/Nano_64_2022_05_28_22.7z"
 
 # OUTPUT VARS
 red=`tput setaf 1`
