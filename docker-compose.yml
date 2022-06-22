@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   nano-node:
     image: nanocurrency/nano:latest
@@ -15,7 +14,6 @@ services:
       - "::1:7078:7078"
     volumes:
       - ./nano-node:/root
-
   watchtower:
     image: v2tec/watchtower
     container_name: watchtower
