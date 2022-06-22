@@ -342,7 +342,7 @@ if [ $monitor = 'true' ]; then
         fi
     fi
 
-    [[ $quiet = 'false' ]] && printf "=> ${yellow}Configuring NANO Node Monitor... ${reset}"
+    # [[ $quiet = 'false' ]] && printf "=> ${yellow}Configuring NANO Node Monitor... ${reset}"
 
     sed -i -e "s/\/\/ \$nanoNodeRPCIP.*;/\$nanoNodeRPCIP/g" ./nano-node-monitor/config.php
     sed -i -e "s/\$nanoNodeRPCIP.*/\$nanoNodeRPCIP = 'nano-node';/g" ./nano-node-monitor/config.php
