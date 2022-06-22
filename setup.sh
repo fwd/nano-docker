@@ -393,18 +393,18 @@ if [[ "$quiet" = "false" ]]; then
         else
         echo "=========================================="
         echo "   http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
-        echo "=========================================="
+        # echo "=========================================="
     fi
 
     if [[ $displaySeed = 'true' ]]; then
-    echo "================${yellow}SECRET${reset}================="
+    echo "=================${yellow}SECRET${reset}==================="
     echo "${green}PUBLIC:${reset} $address"
     echo "${red}SECRET:${reset} $seed"
     echo "==============KEEP THIS SAFE================"
     else
-    echo "================SECRET=================="
+    echo "=================SECRET==================="
     echo "'./setup.sh -s' to print out private key."
-    echo "========================================"
+    echo "=========================================="
     fi
 
     if [[ $displaySeed = 'false' ]]; then
