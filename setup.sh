@@ -11,7 +11,7 @@
 #################################################
 
 # VERSION
-version='0.1'
+version='0.2'
 
 # FAST-SYNC DOWNLOAD LINK
 # BIG THANKS TO @ThiagoSFS
@@ -83,7 +83,15 @@ echo $@ > settings
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo ""
 
-sleep 1
+
+if ! command -v jq &> /dev/null; then
+    if [  -n "$(uname -a | grep Ubuntu)" ]; then
+        sudo apt install jq -y
+    else
+        echo "${CYAN}Cloud${NC}: We could not auto install 'jq'. Please install it manually, before continuing."
+        exit 1
+    fi
+fi
 
 # VERIFY TOOLS INSTALLATIONS
 docker -v &> /dev/null
@@ -118,10 +126,10 @@ if [ $? -ne 0 ]; then
     sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 fi
 
-if [[ $tag == '' ]]; then
-    echo "${yellow}Nano node image tag is now required. Please set the -t argument explicitly to the version you are willing to install (https://hub.docker.com/r/nanocurrency/nano/tags).${reset}"
-    exit 2
-fi
+# if [[ $tag == '' ]]; then
+#     echo "${yellow}Nano node image tag is now required. Please set the -t argument explicitly to the version you are willing to install (https://hub.docker.com/r/nanocurrency/nano/tags).${reset}"
+#     exit 2
+# fi
 
 if [[ $fastSync = 'true' ]]; then
     wget --version &> /dev/null
@@ -184,8 +192,10 @@ fi
 
 docker network create nano-node-network &> /dev/null
 
-if [[ $tag ]]; then
-    sed -i -e "s/    image: nanocurrency\/nano:.*/    image: nanocurrency\/nano:$tag/g" docker-compose.yml
+TAG=$(curl https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r)
+
+if [[ $TAG ]]; then
+    sed -i -e "s/    image: nanocurrency\/nano:.*/    image: nanocurrency\/nano:$TAG/g" docker-compose.yml
 fi
 
 if [[ $quiet = 'false' ]]; then
