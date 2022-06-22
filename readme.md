@@ -56,7 +56,7 @@ cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-**Free: Cloud Server \($100 / 3 Months\)**
+### Free Cloud Server \($100 / 3 Months\)
 
 You can support Nano.to (makers of this script) by using this Digital Ocean referral link:
 
