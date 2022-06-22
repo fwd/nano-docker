@@ -412,18 +412,14 @@ if [[ "$quiet" = "false" ]]; then
     cat <<EOF
 Usage:
 $ nano-node --help   
-
-Curl: 
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'   
+Note: You might need to: source ~/.bash_aliases
 
-You might need to: source ~/.bash_aliases
-
-Documentation: https://docs.nano.org/commands/rpc-protocol/
+Documentation: https://docs.nano.org/commands/rpc-protocol
 EOF
     fi
 
-
-    echo
+    # echo
 
 fi 
 
