@@ -299,9 +299,9 @@ if [[ $tag ]]; then
 fi
 
 if [[ $quiet = 'false' ]]; then
-    docker-compose up -d
+    docker-compose up --remove-orphans -d
 else
-    docker-compose up -d &> /dev/null
+    docker-compose up --remove-orphans -d &> /dev/null
 fi
 
 if [ $? -ne 0 ]; then
@@ -397,10 +397,10 @@ if [[ "$quiet" = "false" ]]; then
     fi
 
     if [[ $displaySeed = 'true' ]]; then
-    echo "================${red}SEED${reset}================="
+    echo "================${yellow}SECRET${reset}================="
     echo "${green}PUBLIC:${reset} $address"
     echo "${red}SECRET:${reset} $seed"
-    echo "=========================================="
+    echo "==============KEEP THIS SAFE================"
     fi
 
     if [[ $displaySeed = 'false' ]]; then
