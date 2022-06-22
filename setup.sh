@@ -351,6 +351,7 @@ if [ $monitor = 'true' ]; then
     sed -i -e "s/\/\/ \$nanoNodeAccount.*;/\$nanoNodeAccount/g" ./nano-node-monitor/config.php
     sed -i -e "s/\$nanoNodeAccount.*/\$nanoNodeAccount = '$address';/g" ./nano-node-monitor/config.php
 
+    # ipAddress=$(dig @resolver4.opendns.com myip.opendns.com +short -4)
     ipAddress=$(curl -s v4.ifconfig.co | awk '{ print $NF}' | tr -d '\r')
 
     # in case of an ipv6 address, add square brackets
@@ -370,10 +371,18 @@ fi
 
 if [[ "$quiet" = "false" ]]; then
 echo "=========================================="
-echo "        Welcome to the Blockchain         "
+echo "        ${green}Welcome to the Blockchain${reset}         "
+
+if [[ $monitor == 'false' ]]; then
 echo "=========================================="
-echo "   http://localhost:7676 or [::1]:7076    "
+echo "   http://${hostname -I | cut -d' ' -f3}:7676 or [::1]:7076    "
 echo "=========================================="
+else
+echo "=========================================="
+echo "   http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
+echo "=========================================="
+fi 
+
 cat <<EOF
 Usage:
 $ nano-node --help   
