@@ -182,7 +182,7 @@ DOCKER_MONITOR_COMPOSE=$(cat <<EOF
 EOF
 )
 
-if [ $monitor == "true" ]; then
+if [ $monitor == "true" || -f ./nano-node-monitor/config.php ]; then
 FINAL_COMPOSE_FILE=$(cat <<EOF
 ${DEFAULT_COMPOSE}
 ${DOCKER_MONITOR_COMPOSE}
@@ -404,7 +404,7 @@ if [[ "$quiet" = "false" ]]; then
     echo "==============KEEP THIS SAFE=============="
     else
     echo "=================SECRET==================="
-    echo "'./setup.sh -s' to print out private key."
+    echo "Use './setup.sh -s' to get private key.   "
     echo "=========================================="
     fi
 
@@ -412,8 +412,10 @@ if [[ "$quiet" = "false" ]]; then
     cat <<EOF
 Usage:
 $ nano-node --help   
+
 Curl: 
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'   
+
 You might need to: source ~/.bash_aliases
 EOF
     fi
