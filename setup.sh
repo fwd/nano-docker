@@ -389,7 +389,7 @@ if [[ "$quiet" = "false" ]]; then
     if [[ $monitor == 'false' ]]; then
         echo
         echo "=========================================="
-        echo "   http://${hostname -I | cut -d' ' -f3}:7676 or [::1]:7076    "
+        echo "   http://$(hostname -I | cut -d' ' -f3):7676 or [::1]:7076    "
         echo "=========================================="
         else
         echo "=========================================="
