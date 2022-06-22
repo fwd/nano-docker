@@ -384,7 +384,7 @@ fi
 
 if [[ "$quiet" = "false" ]]; then
     echo "=========================================="
-    echo "         ${green}Welcome to the Blockchain${reset}         "
+    echo "     ${green}Welcome to the Nano Blockchain${reset}         "
     echo "=========================================="
 
     if [[ $monitor == 'false' ]]; then
