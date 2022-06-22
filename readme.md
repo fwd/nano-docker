@@ -26,7 +26,7 @@ cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
 
 #### Flags
 - **-f**: Enable Fast Sync (Default: True)
-- **-m**: Install [Node-Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
+- **-m**: Install [Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
 - **-p**: Set Node Monitor Port (Default: 80)
 - **-t**: Install specific Node Version (Default: Latest)
 - **-q**: Enable Quiet Install (Default: False)
@@ -51,7 +51,7 @@ cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
 - 1TB BANDWIDTH
 - ON 24/7
 
-Free: Cloud Server ($100 / 3 Months)
+**Free: Cloud Server \($100 / 3 Months\)**
 
 You can support Nano.to (makers of this script) by using this Digital Ocean referral link:
 
