@@ -417,6 +417,8 @@ Curl:
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'   
 
 You might need to: source ~/.bash_aliases
+
+Documentation: https://docs.nano.org/commands/rpc-protocol/
 EOF
     fi
 
