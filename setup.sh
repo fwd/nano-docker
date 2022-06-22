@@ -402,8 +402,9 @@ if [[ "$quiet" = "false" ]]; then
     echo "${red}SECRET:${reset} $seed"
     echo "==============KEEP THIS SAFE================"
     else
-    echo "==============SECRET================"
+    echo "================SECRET=================="
     echo "'./setup.sh -s' to print out private key."
+    echo "========================================"
     fi
 
     if [[ $displaySeed = 'false' ]]; then
