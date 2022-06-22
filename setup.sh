@@ -182,7 +182,7 @@ DOCKER_MONITOR_COMPOSE=$(cat <<EOF
 EOF
 )
 
-if [ $monitor == "true" || -f ./nano-node-monitor/config.php ]; then
+if [ $monitor == "true" ] || [ -f ./nano-node-monitor/config.php ]; then
 FINAL_COMPOSE_FILE=$(cat <<EOF
 ${DEFAULT_COMPOSE}
 ${DOCKER_MONITOR_COMPOSE}
