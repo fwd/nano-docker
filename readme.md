@@ -61,7 +61,9 @@ https://m.do.co/c/f139acf4ddcb
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-Optional reading: [How To Setup a Server on Digital Ocean](https://docs.digitalocean.com/products/droplets/how-to/create/)
+Further Reading: [How To Setup a Server on Digital Ocean](https://docs.digitalocean.com/products/droplets/how-to/create/)
+
+---
 
 ### Understand The Magic (Optional)
 
