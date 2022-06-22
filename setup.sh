@@ -384,7 +384,7 @@ fi
 
 if [[ "$quiet" = "false" ]]; then
     echo "=========================================="
-    echo "        ${green}Welcome to the Blockchain${reset}         "
+    echo "         ${green}Welcome to the Blockchain${reset}         "
     echo "=========================================="
 
     if [[ $monitor == 'false' ]]; then
@@ -400,7 +400,7 @@ if [[ "$quiet" = "false" ]]; then
     echo "=================${yellow}SECRET${reset}==================="
     echo "${green}PUBLIC:${reset} $address"
     echo "${red}SECRET:${reset} $seed"
-    echo "==============KEEP THIS SAFE================"
+    echo "==============KEEP THIS SAFE=============="
     else
     echo "=================SECRET==================="
     echo "'./setup.sh -s' to print out private key."
