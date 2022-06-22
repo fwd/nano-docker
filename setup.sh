@@ -20,6 +20,12 @@ yellow=`tput setaf 3`
 bold=`tput bold`
 reset=`tput sgr0`
 
+if [[ "$1" == "-s" ]] || [[ "$2" == "-s" ]] || [[ "$3" == "-s" ]] || [[ "$4" == "-s" ]] || [[ "$5" == "-s" ]] || [[ "$6" == "-s" ]] || [[ "$7" == "-s" ]]; then
+displaySeed='true'
+else
+displaySeed='false'
+fi
+
 if [[ "$1" == "-q" ]] || [[ "$2" == "-q" ]] || [[ "$3" == "-q" ]] || [[ "$4" == "-q" ]] || [[ "$5" == "-q" ]] || [[ "$6" == "-q" ]] || [[ "$7" == "-q" ]]; then
 quiet='true'
 else
@@ -332,6 +338,12 @@ else
     walletId=$(echo $existedWallet | tr -d '\r')
 fi
 
+sleep 1
+
+if [[ $quiet = 'false' && $displaySeed = 'true' ]]; then
+    seed=$(${nodeExec} --wallet_decrypt_unsafe --wallet=$walletId | grep 'Seed' | awk '{ print $NF}' | tr -d '\r')
+fi
+
 if [ $monitor = 'true' ]; then
 
     # UPDATE MONITOR CONFIGS
@@ -383,8 +395,14 @@ else
 echo "=========================================="
 echo "   http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
 echo "=========================================="
-echo
-echo
+# echo
+fi
+
+if [[ $displaySeed = 'true' ]]; then
+echo "================${green}SEED${reset}================="
+echo "${yellow}${red}$seed${yellow}${reset}"
+echo "=========================================="
+fi
 
 cat <<EOF
 Usage:
