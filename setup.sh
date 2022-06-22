@@ -108,7 +108,7 @@ if [[ -z $tag ]]; then tag=$(curl -s https://api.github.com/repos/nanocurrency/n
 # exit 1
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo ""
+    echo "Software: Ok"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Operating system not supported."
     exit 1
@@ -259,7 +259,7 @@ if [[ $fastSync = 'true' ]]; then
         7z x todaysledger.7z  -o./nano-node/Nano -y &> /dev/null
         rm todaysledger.7z
         printf "${green}Done.${reset}\n"
-        echo ""
+        # echo ""
     else
         wget -O todaysledger.7z ${ledgerDownloadLink} -q
         docker-compose stop nano-node &> /dev/null
@@ -270,7 +270,7 @@ if [[ $fastSync = 'true' ]]; then
 fi
 
 # DETERMINE IF THIS IS AN INITIAL INSTALL
-[[ $quiet = 'false' ]] && echo "=> ${yellow}Checking initial status...${reset}"
+[[ $quiet = 'false' ]] && echo "=> ${yellow}Checking status...${reset}"
 [[ $quiet = 'false' ]] && echo ""
 
 # check if node mounted directory exists
@@ -289,8 +289,8 @@ if [ -d "./nano-node" ]; then
 fi
 
 # SPIN UP THE APPROPRIATE STACK
-[[ $quiet = 'false' ]] && echo "=> Pulling images and spinning up containers..."
-[[ $quiet = 'false' ]] && echo ""
+# [[ $quiet = 'false' ]] && echo "=> Pulling images and spinning up containers..."
+# [[ $quiet = 'false' ]] && echo ""
 
 # docker network create nano-node-network &> /dev/null
 
@@ -403,15 +403,15 @@ if [[ "$quiet" = "false" ]]; then
     echo "=========================================="
     fi
 
+    if [[ $displaySeed = 'false' ]]; then
     cat <<EOF
 Usage:
 $ nano-node --help   
-
 Curl: 
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'   
-
 You might need to: source ~/.bash_aliases
 EOF
+    fi
 
     echo
 
