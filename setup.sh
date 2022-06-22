@@ -155,7 +155,7 @@ EOF
 )
 fi
 
-cat > _docker-compose.yml <<EOF
+cat > docker-compose.yml <<EOF
 $FINAL_COMPOSE_FILE
 EOF
 
@@ -279,7 +279,7 @@ fi
 
 docker network create nano-node-network &> /dev/null
 
-if [ $monitor != '' ]; then
+if [ $monitor == 'true' ]; then
 
     # UPDATE MONITOR CONFIGS
     if [ ! -f ./nano-node-monitor/config.php ]; then
@@ -315,7 +315,6 @@ if [ $monitor != '' ]; then
     sed -i -e 's/\r//g' ./nano-node-monitor/config.php
 
 fi
-
 
 if [[ $tag ]]; then
     sed -i -e "s/    image: nanocurrency\/nano:.*/    image: nanocurrency\/nano:$tag/g" docker-compose.yml
