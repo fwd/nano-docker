@@ -12,6 +12,7 @@ services:
       - "7075:7075/udp"
       - "7075:7075"
       - "::1:7076:7076"
+      - "::1:7078:7078"
     volumes:
       - ./nano-node:/root
 
@@ -22,8 +23,3 @@ services:
     command: watchtower nano-node
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
-networks:
-  default:
-    external:
-      name: nano-node-network
