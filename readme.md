@@ -51,13 +51,15 @@ cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
 - 1TB BANDWIDTH
 - ON 24/7
 
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
 **Free: Cloud Server \($100 / 3 Months\)**
 
 You can support Nano.to (makers of this script) by using this Digital Ocean referral link:
 
 https://m.do.co/c/f139acf4ddcb
 
---
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
 Optional reading: [How To Setup a Server on Digital Ocean](https://docs.digitalocean.com/products/droplets/how-to/create/)
 
