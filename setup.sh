@@ -365,17 +365,17 @@ if [ $monitor = 'true' ]; then
     sed -i -e "s/\/\/ \$nanoNodeAccount.*;/\$nanoNodeAccount/g" ./nano-node-monitor/config.php
     sed -i -e "s/\$nanoNodeAccount.*/\$nanoNodeAccount = '$address';/g" ./nano-node-monitor/config.php
 
-    # ipAddress=$(dig @resolver4.opendns.com myip.opendns.com +short -4)
-    ipAddress=$(curl -s v4.ifconfig.co | awk '{ print $NF}' | tr -d '\r')
+    ipAddress=$(dig @resolver4.opendns.com myip.opendns.com +short -4)
+    # ipAddress=$(curl -s v4.ifconfig.co | awk '{ print $NF}' | tr -d '\r')
 
     # in case of an ipv6 address, add square brackets
     if [[ $ipAddress =~ .*:.* ]]; then
         ipAddress="[$ipAddress]"
     fi
 
-    sed -i -e "s/\/\/ \$nanoNodeName.*;/\$nanoNodeName = 'nano-node-docker-$ipAddress';/g" ./nano-node-monitor/config.php
+    sed -i -e "s/\/\/ \$nanoNodeName.*;/\$nanoNodeName = 'nano-docker-$ipAddress';/g" ./nano-node-monitor/config.php
 
-    sed -i -e "s/\/\/ \$welcomeMsg.*;/\$welcomeMsg = 'Welcome! This node was setup using <a href=\"https:\/\/github.com\/lephleg\/nano-node-docker\" target=\"_blank\">NANO Node Docker<\/a>!';/g" ./nano-node-monitor/config.php
+    sed -i -e "s/\/\/ \$welcomeMsg.*;/\$welcomeMsg = 'Welcome! This node was setup using <a href=\"https:\/\/github.com\/fwd\/node-docker\" target=\"_blank\">Nano Docker<\/a>!';/g" ./nano-node-monitor/config.php
     
     sed -i -e "s/\/\/ \$blockExplorer.*;/\$blockExplorer = 'meltingice';/g" ./nano-node-monitor/config.php
 
