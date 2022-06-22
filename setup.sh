@@ -68,6 +68,16 @@ if [[ "$1" == "-v" ]] || [[ "$2" == "-v" ]] || [[ "$3" == "-v" ]] || [[ "$4" == 
     if [[ "$8" == "-v" ]]; then tag=$9; fi;
 fi
 
+# JQ used right below
+if ! command -v jq &> /dev/null; then
+    if [  -n "$(uname -a | grep Ubuntu)" ]; then
+        sudo apt install jq -y
+    else
+        echo "${CYAN}Cloud${NC}: We could not auto install 'jq'. Please install it manually, before continuing."
+        exit 1
+    fi
+fi
+
 if [[ -z $port ]]; then port='80'; fi
 
 if [[ -z $tag ]]; then tag=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r); fi
@@ -180,15 +190,6 @@ EOF
 [[ $quiet = 'false' ]] && echo ""
 
 sleep 1
-
-if ! command -v jq &> /dev/null; then
-    if [  -n "$(uname -a | grep Ubuntu)" ]; then
-        sudo apt install jq -y
-    else
-        echo "${CYAN}Cloud${NC}: We could not auto install 'jq'. Please install it manually, before continuing."
-        exit 1
-    fi
-fi
 
 # VERIFY TOOLS INSTALLATIONS
 docker -v &> /dev/null
