@@ -386,7 +386,7 @@ if [[ "$quiet" = "false" ]]; then
     echo "=========================================="
     echo "        ${green}Welcome to the Blockchain${reset}         "
     echo "=========================================="
-    
+
     if [[ $monitor == 'false' ]]; then
         echo "   http://$(hostname -I | cut -d' ' -f3):7676 or [::1]:7076    "
         echo "=========================================="
@@ -397,8 +397,9 @@ if [[ "$quiet" = "false" ]]; then
     fi
 
     if [[ $displaySeed = 'true' ]]; then
-    echo "================${green}SEED${reset}================="
-    echo "${yellow}${red}$seed${yellow}${reset}"
+    echo "================${red}SEED${reset}================="
+    echo "${green}PUBLIC:${reset} $address"
+    echo "${red}SECRET:${reset} $seed"
     echo "=========================================="
     fi
 
