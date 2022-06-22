@@ -410,7 +410,7 @@ if [[ "$quiet" = "false" ]]; then
 
     if [[ $displaySeed = 'false' ]]; then
     cat <<EOF
-${cyan}Node CLI:${reset}
+${yellow}Node CLI:${reset}
 $ nano-node --help   
 Note: You might need to: source ~/.bash_aliases
 
