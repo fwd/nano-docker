@@ -109,7 +109,7 @@ if [[ -z $tag ]]; then tag=$(curl -s https://api.github.com/repos/nanocurrency/n
 # exit 1
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo "Software: Ok"
+    echo ""
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Operating system not supported."
     exit 1
@@ -389,11 +389,11 @@ if [[ "$quiet" = "false" ]]; then
     echo "=========================================="
 
     if [[ $monitor == 'false' ]]; then
-        echo "   http://$(hostname -I | cut -d' ' -f3):7676 or [::1]:7076    "
+        echo "  http://$(hostname -I | cut -d' ' -f3):7676 or [::1]:7076    "
         echo "=========================================="
         else
         echo "=========================================="
-        echo "   http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
+        echo "  http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
         # echo "=========================================="
     fi
 
