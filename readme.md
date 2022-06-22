@@ -46,7 +46,7 @@ cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
 - Mac (Coming Soon)
 - Window (Coming Soon)
 
-**Hardware:**
+**Minimum Hardware:**
 
 - 2 vCPU
 - 4GB RAM
