@@ -1,6 +1,3 @@
-# THIS FILE IS FOR DEMO ONLY
-# SEE /SETUP.SH LINE: 105
-
 version: '3'
 services:
   nano-node:
@@ -17,7 +14,6 @@ services:
       - "::1:7078:7078"
     volumes:
       - ./nano-node:/root
-
   watchtower:
     image: v2tec/watchtower
     container_name: watchtower
@@ -25,13 +21,3 @@ services:
     command: watchtower nano-node nano-node-monitor
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
-  nano-node-monitor:
-    image: nanotools/nanonodemonitor
-    container_name: nano-node-monitor
-    hostname: nano-node-monitor
-    restart: unless-stopped
-    volumes:
-      - ./nano-node-monitor:/opt/nanoNodeMonitor
-    ports:
-      - "80:80"

@@ -383,28 +383,27 @@ if [ $monitor = 'true' ]; then
 fi
 
 if [[ "$quiet" = "false" ]]; then
-echo "=========================================="
-echo "        ${green}Welcome to the Blockchain${reset}         "
+    echo "=========================================="
+    echo "        ${green}Welcome to the Blockchain${reset}         "
 
-if [[ $monitor == 'false' ]]; then
-echo
-echo "=========================================="
-echo "   http://${hostname -I | cut -d' ' -f3}:7676 or [::1]:7076    "
-echo "=========================================="
-else
-echo "=========================================="
-echo "   http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
-echo "=========================================="
-# echo
-fi
+    if [[ $monitor == 'false' ]]; then
+        echo
+        echo "=========================================="
+        echo "   http://${hostname -I | cut -d' ' -f3}:7676 or [::1]:7076    "
+        echo "=========================================="
+        else
+        echo "=========================================="
+        echo "   http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
+        echo "=========================================="
+    fi
 
-if [[ $displaySeed = 'true' ]]; then
-echo "================${green}SEED${reset}================="
-echo "${yellow}${red}$seed${yellow}${reset}"
-echo "=========================================="
-fi
+    # if [[ $displaySeed = 'true' ]]; then
+    # echo "================${green}SEED${reset}================="
+    # echo "${yellow}${red}$seed${yellow}${reset}"
+    # echo "=========================================="
+    # fi
 
-cat <<EOF
+    cat <<EOF
 Usage:
 $ nano-node --help   
 
@@ -413,9 +412,9 @@ $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 
 You might need to: source ~/.bash_aliases
 EOF
-fi
+    fi
 
-echo
+    echo
 
 fi 
 
