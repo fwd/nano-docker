@@ -401,6 +401,9 @@ if [[ "$quiet" = "false" ]]; then
     echo "${green}PUBLIC:${reset} $address"
     echo "${red}SECRET:${reset} $seed"
     echo "==============KEEP THIS SAFE================"
+    else
+    echo "==============SECRET================"
+    echo "'./setup.sh -s' to print out private key."
     fi
 
     if [[ $displaySeed = 'false' ]]; then
@@ -412,6 +415,7 @@ $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 You might need to: source ~/.bash_aliases
 EOF
     fi
+
 
     echo
 
