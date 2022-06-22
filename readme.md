@@ -26,11 +26,11 @@ cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
 
 #### Flags
 - **-f**: Enable Fast Sync (Default: True)
-- **-p**: Set Node Monitor Port (Default: 80)
 - **-t**: Install specific Node Version (Default: Latest)
 - **-m**: Install [Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
-- **-q**: Enable Quiet Install (Default: False)
-- **-v**: Alias of -t
+- **-p**: Set Node Monitor Port (Default: 80)
+- **-q**: No Console Output (Default: False)
+- **-v**: Alias of **-t**
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
