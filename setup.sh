@@ -68,12 +68,23 @@ if [[ "$1" == "-v" ]] || [[ "$2" == "-v" ]] || [[ "$3" == "-v" ]] || [[ "$4" == 
     if [[ "$8" == "-v" ]]; then tag=$9; fi;
 fi
 
+# PRINT INSTALLER DETAILS
+[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
+[[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE ${reset}"
+[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
+[[ $quiet = 'false' ]] && echo "${green}${bold}by @nano2dev${reset}"
+[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
+[[ $quiet = 'false' ]] && echo ""
+
+sleep 1
+
 # JQ used right below
 if ! command -v jq &> /dev/null; then
     if [  -n "$(uname -a | grep Ubuntu)" ]; then
+        echo "${CYAN}JQ:${NC}: Installing."
         sudo apt install jq -y
     else
-        echo "${CYAN}Cloud${NC}: We could not auto install 'jq'. Please install it manually, before continuing."
+        echo "${CYAN}Error${NC}: Could not auto install 'jq'. Please install it manually, then run ./setup.sh again."
         exit 1
     fi
 fi
@@ -180,16 +191,6 @@ fi
 cat > docker-compose.yml <<EOF
 $FINAL_COMPOSE_FILE
 EOF
-
-# PRINT INSTALLER DETAILS
-[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
-[[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE ${reset}"
-[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
-[[ $quiet = 'false' ]] && echo "${green}${bold}by @nano2dev${reset}"
-[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
-[[ $quiet = 'false' ]] && echo ""
-
-sleep 1
 
 # VERIFY TOOLS INSTALLATIONS
 docker -v &> /dev/null
