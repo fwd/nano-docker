@@ -8,7 +8,7 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Install Live Nano Node
+## ❯ Express Install
 
 ```bash
 
@@ -17,14 +17,33 @@ curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
+## ❯ Custom Install
+
+```
+git clone https://github.com/fwd/nano-docker.git
+cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
+```
+
+#### Flags
+- **-f**: Enable Fast Sync (Default: True)
+- **-m**: Install [Node-Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
+- **-p**: Set Node Monitor Port (Default: 80)
+- **-t**: Install specific Node Version (Default: Latest)
+- **-q**: Enable Quiet Install (Default: False)
+- **-v**: Alias of -t
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
 ## Requirements
+
+**Software:**
 
 - Ubuntu (Supported)
 - Other Linux (Coming Soon)
 - Mac (Coming Soon)
 - Window (Coming Soon)
 
-Minimum Specs:
+**Hardware:**
 
 - 2 vCPU
 - 4GB RAM
@@ -32,23 +51,21 @@ Minimum Specs:
 - 1TB BANDWIDTH
 - ON 24/7
 
-> We assume you know how to "Spin up" a cloud server. If not, see below. 
-
-> You're welcomed to use a spare gaming computer at home. Just needs Ubuntu. 
-
-## Free Cloud Server ($100 / 3 Months)
+Free: Cloud Server ($100 / 3 Months)
 
 You can support Nano.to (makers of this script) by using this Digital Ocean referral link:
 
 https://m.do.co/c/f139acf4ddcb
 
+--
+
 Optional reading: [How To Setup a Server on Digital Ocean](https://docs.digitalocean.com/products/droplets/how-to/create/)
 
-## Understand The Magic (Optional)
+### Understand The Magic (Optional)
 
 This script does A LOT. It's important to understand what is happening behind the scenes. 
 
-### 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu)
+#### 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu)
 
 ```bash
 # Install Basic Tools
@@ -69,7 +86,7 @@ sudo apt-get update
 sudo apt-get -y install jq docker-ce docker-ce-cli containerd.io
 ```
 
-### 2. Install Docker Compose
+#### 2. Install Docker Compose
 
 ```bash
 # Download latest script.
@@ -82,7 +99,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-### 3. Install Nano Docker
+#### 3. Install Nano Docker
 
 After everything is prepared. We can finally run the script in this Repo.
 
@@ -97,7 +114,7 @@ cd ~/nano-docker
 sudo ./setup.sh -s -t V23.1
 ```
 
-### 4. Launch Node (24/7)
+#### 4. Launch Node (24/7)
 
 - Script [unlocks](https://docs.nano.org/running-a-node/wallet-setup/#update-configuration) Wallet RPC.
 - Node is set up on localhost port 7076. Use '[::1]:7076' for IPv6.
@@ -106,7 +123,7 @@ sudo ./setup.sh -s -t V23.1
 - See [setup.sh](/setup.sh) for complete setup script.
 - See [docker-compose.yml](/docker-compose.yml) for network bindings created.
 
-### 5. Test Node
+#### 5. Test Node
 
 The script adds a ```nano-node``` alias to your **~/.bash_aliases** file.
 

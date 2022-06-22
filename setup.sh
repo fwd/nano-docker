@@ -360,13 +360,13 @@ else
     walletId=$(echo $existedWallet | tr -d '\r')
 fi
 
+if [[ "$quiet" = "false" ]]; then
 echo "=========================================="
 echo "        Welcome to the Blockchain         "
 echo "=========================================="
 echo "   http://localhost:7676 or [::1]:7076    "
 echo "=========================================="
 cat <<EOF
-
 Usage:
 $ nano-node --help   
 
@@ -375,6 +375,7 @@ $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 
 You might need to: source ~/.bash_aliases
 EOF
+fi
 
 # At the end for good luck.
 # SET BASH ALIASES FOR NODE CLI
