@@ -33,6 +33,7 @@ cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
 - **-m**: Install [Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
 - **-p**: Set Node Monitor Port (Default: 80)
 - **-q**: No Console Output (Default: False)
+- **-s**: Print out Private Key (Default: False)
 - **-v**: Alias of **-t**
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
