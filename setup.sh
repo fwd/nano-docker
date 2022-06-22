@@ -385,10 +385,9 @@ fi
 if [[ "$quiet" = "false" ]]; then
     echo "=========================================="
     echo "        ${green}Welcome to the Blockchain${reset}         "
-
+    echo "=========================================="
+    
     if [[ $monitor == 'false' ]]; then
-        echo
-        echo "=========================================="
         echo "   http://$(hostname -I | cut -d' ' -f3):7676 or [::1]:7076    "
         echo "=========================================="
         else
@@ -397,11 +396,11 @@ if [[ "$quiet" = "false" ]]; then
         echo "=========================================="
     fi
 
-    # if [[ $displaySeed = 'true' ]]; then
-    # echo "================${green}SEED${reset}================="
-    # echo "${yellow}${red}$seed${yellow}${reset}"
-    # echo "=========================================="
-    # fi
+    if [[ $displaySeed = 'true' ]]; then
+    echo "================${green}SEED${reset}================="
+    echo "${yellow}${red}$seed${yellow}${reset}"
+    echo "=========================================="
+    fi
 
     cat <<EOF
 Usage:
@@ -412,7 +411,6 @@ $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 
 You might need to: source ~/.bash_aliases
 EOF
-    fi
 
     echo
 
