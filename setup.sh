@@ -390,7 +390,7 @@ if [[ "$quiet" = "false" ]]; then
 
     if [[ $monitor == 'false' ]]; then
         echo "  http://$(hostname -I | cut -d' ' -f3):7676 or [::1]:7076    "
-        echo "=========================================="
+        # echo "=========================================="
         else
         echo "=========================================="
         echo "  http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
@@ -410,9 +410,11 @@ if [[ "$quiet" = "false" ]]; then
 
     if [[ $displaySeed = 'false' ]]; then
     cat <<EOF
+    
 Usage:
 $ nano-node --help   
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'   
+
 Note: You might need to: source ~/.bash_aliases
 
 Documentation: https://docs.nano.org/commands/rpc-protocol
