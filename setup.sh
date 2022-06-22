@@ -75,12 +75,13 @@ if [[ "$1" == "-v" ]] || [[ "$2" == "-v" ]] || [[ "$3" == "-v" ]] || [[ "$4" == 
 fi
 
 # PRINT INSTALLER DETAILS
+[[ $quiet = 'false' ]] && echo ""
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE ${reset}"
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo "${green}${bold}by @nano2dev${reset}"
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
-[[ $quiet = 'false' ]] && echo ""
+# [[ $quiet = 'false' ]] && echo ""
 
 sleep 1
 
