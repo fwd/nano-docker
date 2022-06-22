@@ -171,8 +171,6 @@ cat > docker-compose.yml <<EOF
 $FINAL_COMPOSE_FILE
 EOF
 
-# exit 1
-
 # PRINT INSTALLER DETAILS
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE ${reset}"
@@ -181,8 +179,7 @@ EOF
 [[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
 [[ $quiet = 'false' ]] && echo ""
 
-# Calm before storm
-sleep 2
+sleep 1
 
 if ! command -v jq &> /dev/null; then
     if [  -n "$(uname -a | grep Ubuntu)" ]; then
@@ -248,15 +245,13 @@ if [[ $fastSync = 'true' ]]; then
     ledgerDownloadLink=$(curl -s 'https://s3.us-east-2.amazonaws.com/repo.nano.org/snapshots/latest')
 
     if [[ $quiet = 'false' ]]; then
-        printf "=> ${yellow}Downloading latest ledger files for fast-syncing...${reset}\n"
+        printf "=> ${yellow}Downloading latest ledger files...${reset}\n"
         wget -O todaysledger.7z ${ledgerDownloadLink} -q --show-progress
-
         printf "=> ${yellow}Unzipping and placing the files (takes a while)...${reset} "
         7z x todaysledger.7z  -o./nano-node/Nano -y &> /dev/null
         rm todaysledger.7z
-        printf "${green}done.${reset}\n"
+        printf "${green}Done.${reset}\n"
         echo ""
-
     else
         wget -O todaysledger.7z ${ledgerDownloadLink} -q
         docker-compose stop nano-node &> /dev/null
@@ -289,44 +284,7 @@ fi
 [[ $quiet = 'false' ]] && echo "=> Pulling images and spinning up containers..."
 [[ $quiet = 'false' ]] && echo ""
 
-docker network create nano-node-network &> /dev/null
-
-if [ $monitor == 'true' ]; then
-
-    # UPDATE MONITOR CONFIGS
-    if [ ! -f ./nano-node-monitor/config.php ]; then
-        [[ $quiet = 'false' ]] && echo "=> ${yellow}No existing NANO Node Monitor config file found. Fetching a fresh copy...${reset}"
-        if [[ $quiet = 'false' ]]; then
-            docker-compose restart nano-node-monitor
-        else
-            docker-compose restart nano-node-monitor > /dev/null
-        fi
-    fi
-
-    [[ $quiet = 'false' ]] && printf "=> ${yellow}Configuring NANO Node Monitor... ${reset}"
-
-    sed -i -e "s/\/\/ \$nanoNodeRPCIP.*;/\$nanoNodeRPCIP/g" ./nano-node-monitor/config.php
-    sed -i -e "s/\$nanoNodeRPCIP.*/\$nanoNodeRPCIP = 'nano-node';/g" ./nano-node-monitor/config.php
-
-    sed -i -e "s/\/\/ \$nanoNodeAccount.*;/\$nanoNodeAccount/g" ./nano-node-monitor/config.php
-    sed -i -e "s/\$nanoNodeAccount.*/\$nanoNodeAccount = '$address';/g" ./nano-node-monitor/config.php
-
-    ipAddress=$(curl -s v4.ifconfig.co | awk '{ print $NF}' | tr -d '\r')
-
-    # in case of an ipv6 address, add square brackets
-    if [[ $ipAddress =~ .*:.* ]]; then
-        ipAddress="[$ipAddress]"
-    fi
-
-    sed -i -e "s/\/\/ \$nanoNodeName.*;/\$nanoNodeName = 'nano-node-docker-$ipAddress';/g" ./nano-node-monitor/config.php
-
-    sed -i -e "s/\/\/ \$welcomeMsg.*;/\$welcomeMsg = 'Welcome! This node was setup using <a href=\"https:\/\/github.com\/lephleg\/nano-node-docker\" target=\"_blank\">NANO Node Docker<\/a>!';/g" ./nano-node-monitor/config.php
-    
-    sed -i -e "s/\/\/ \$blockExplorer.*;/\$blockExplorer = 'meltingice';/g" ./nano-node-monitor/config.php
-
-    sed -i -e 's/\r//g' ./nano-node-monitor/config.php
-
-fi
+# docker network create nano-node-network &> /dev/null
 
 if [[ $tag ]]; then
     sed -i -e "s/    image: nanocurrency\/nano:.*/    image: nanocurrency\/nano:$tag/g" docker-compose.yml
@@ -370,6 +328,43 @@ else
     address="$(${nodeExec} --wallet_list | grep 'nano_' | awk '{ print $NF}' | tr -d '\r')"
     sleep 1
     walletId=$(echo $existedWallet | tr -d '\r')
+fi
+
+if [ $monitor = 'true' ]; then
+
+    # UPDATE MONITOR CONFIGS
+    if [ ! -f ./nano-node-monitor/config.php ]; then
+        [[ $quiet = 'false' ]] && echo "=> ${yellow}No existing NANO Node Monitor config file found. Fetching a fresh copy...${reset}"
+        if [[ $quiet = 'false' ]]; then
+            docker-compose restart nano-node-monitor
+        else
+            docker-compose restart nano-node-monitor > /dev/null
+        fi
+    fi
+
+    [[ $quiet = 'false' ]] && printf "=> ${yellow}Configuring NANO Node Monitor... ${reset}"
+
+    sed -i -e "s/\/\/ \$nanoNodeRPCIP.*;/\$nanoNodeRPCIP/g" ./nano-node-monitor/config.php
+    sed -i -e "s/\$nanoNodeRPCIP.*/\$nanoNodeRPCIP = 'nano-node';/g" ./nano-node-monitor/config.php
+
+    sed -i -e "s/\/\/ \$nanoNodeAccount.*;/\$nanoNodeAccount/g" ./nano-node-monitor/config.php
+    sed -i -e "s/\$nanoNodeAccount.*/\$nanoNodeAccount = '$address';/g" ./nano-node-monitor/config.php
+
+    ipAddress=$(curl -s v4.ifconfig.co | awk '{ print $NF}' | tr -d '\r')
+
+    # in case of an ipv6 address, add square brackets
+    if [[ $ipAddress =~ .*:.* ]]; then
+        ipAddress="[$ipAddress]"
+    fi
+
+    sed -i -e "s/\/\/ \$nanoNodeName.*;/\$nanoNodeName = 'nano-node-docker-$ipAddress';/g" ./nano-node-monitor/config.php
+
+    sed -i -e "s/\/\/ \$welcomeMsg.*;/\$welcomeMsg = 'Welcome! This node was setup using <a href=\"https:\/\/github.com\/lephleg\/nano-node-docker\" target=\"_blank\">NANO Node Docker<\/a>!';/g" ./nano-node-monitor/config.php
+    
+    sed -i -e "s/\/\/ \$blockExplorer.*;/\$blockExplorer = 'meltingice';/g" ./nano-node-monitor/config.php
+
+    sed -i -e 's/\r//g' ./nano-node-monitor/config.php
+
 fi
 
 if [[ "$quiet" = "false" ]]; then
