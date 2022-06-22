@@ -375,6 +375,7 @@ echo "=========================================="
 echo "        ${green}Welcome to the Blockchain${reset}         "
 
 if [[ $monitor == 'false' ]]; then
+echo
 echo "=========================================="
 echo "   http://${hostname -I | cut -d' ' -f3}:7676 or [::1]:7076    "
 echo "=========================================="
@@ -382,7 +383,8 @@ else
 echo "=========================================="
 echo "   http://$(dig @resolver4.opendns.com myip.opendns.com +short -4):$port or [::1]:$port    "
 echo "=========================================="
-fi 
+echo
+echo
 
 cat <<EOF
 Usage:
@@ -394,6 +396,10 @@ $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 You might need to: source ~/.bash_aliases
 EOF
 fi
+
+echo
+
+fi 
 
 # At the end for good luck.
 # SET BASH ALIASES FOR NODE CLI
