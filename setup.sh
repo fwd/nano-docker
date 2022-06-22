@@ -410,14 +410,14 @@ if [[ "$quiet" = "false" ]]; then
 
     if [[ $displaySeed = 'false' ]]; then
     cat <<EOF
-    
-Usage:
+${cyan}Node CLI:${reset}
 $ nano-node --help   
-$ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'   
-
 Note: You might need to: source ~/.bash_aliases
 
-Documentation: https://docs.nano.org/commands/rpc-protocol
+${yellow}Node RPC:${reset}
+$ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'   
+
+${green}Documentation:${reset} https://docs.nano.org/commands/rpc-protocol
 EOF
     fi
 
