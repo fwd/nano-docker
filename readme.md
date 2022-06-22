@@ -19,8 +19,11 @@ curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 
 ## ❯ Custom Install
 
-```
+```bash
 git clone https://github.com/fwd/nano-docker.git
+```
+
+```bash
 cd nano-docker && sudo ./setup.sh -f -v V23.3 -m -p 8080
 ```
 
