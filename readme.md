@@ -119,7 +119,7 @@ cd ~ && git clone https://github.com/fwd/nano-docker.git
 cd ~/nano-docker
 
 # Always installs latest version
-sudo ./setup.sh -s -t V23.1
+sudo ./setup.sh -s -v V23.3 -p 80
 ```
 
 #### 4. Launch Node (24/7)
