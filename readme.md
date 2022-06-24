@@ -159,7 +159,7 @@ All localhost. The fastest and safest method.
 
 ## Nano.to Packages
 
-- [n2](https://github.com/fwd/n2) - A high performance command line for Nano.to and local Nodes.
+- [n2-cli](https://github.com/fwd/n2) - A high performance command line interface for managing Nano nodes and Nano.to.
 
 ## Community Packages
 
