@@ -157,13 +157,17 @@ All localhost. The fastest and safest method.
 - [Common RPC Errors](https://docs.nano.to/rpc-errors)
 - [Nano.to Docs](https://docs.nano.to)
 
+## Nano.to Packages
+
+- [n2](https://github.com/fwd/n2) - A high performance command line for Nano.to and local Nodes.
+
 ## Community Packages
 
-- [Pippin Wallet](https://github.com/appditto/pippin_nano_wallet) - A high performance, lightweight alternative to the NANO Node developer wallet.
+- [Pippin Wallet](https://github.com/appditto/pippin_nano_wallet) - Enterprise alternative to the NANO Node developer wallet.
 - [Full Node RPC](https://github.com/Joohansson/NanoRPCProxy) - A relay, limiter, token and protection system for Nano node RPC & websocket interface (w/ PoW Monetization)
 - [Nault](https://github.com/Nault/Nault) - Self-Hosted Web Wallet
 - [nanocurrency-js](https://github.com/marvinroger/nanocurrency-js) - Toolkit for Nano cryptocurrency client side offline integrations without requiring NodeJS functions
-- [Node Docker](https://github.com/lephleg/nano-node-docker) - Recommended for Representative Nodes (w/ SSL)
+- [Original Node Docker](https://github.com/lephleg/nano-node-docker) - Recommended for Representative Nodes (w/ SSL)
 - [Nano Vanity](https://github.com/PlasmaPower/nano-vanity) - Generate Vanity Nano Addresses
 - [Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) - Docs for Node Monitor.
 
