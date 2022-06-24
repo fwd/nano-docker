@@ -150,6 +150,23 @@ $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 
 All localhost. The fastest and safest method.
 
+## Further Reading
+
+- [Official CLI Docs](https://docs.nano.org/commands/rpc-protocol)
+- [Official Wallet RPC Docs](https://docs.nano.org/commands/rpc-protocol/#wallet-rpcs)
+- [Common RPC Errors](https://docs.nano.to/rpc-errors)
+- [Nano.to Docs](https://docs.nano.to)
+
+## Community Packages
+
+- [Pippin Wallet](https://github.com/appditto/pippin_nano_wallet) - A high performance, lightweight alternative to the NANO Node developer wallet.
+- [Full Node RPC](https://github.com/Joohansson/NanoRPCProxy) - A relay, limiter, token and protection system for Nano node RPC & websocket interface (w/ PoW Monetization)
+- [Nault](https://github.com/Nault/Nault) - Self-Hosted Web Wallet
+- [nanocurrency-js](https://github.com/marvinroger/nanocurrency-js) - Toolkit for Nano cryptocurrency client side offline integrations without requiring NodeJS functions
+- [Node Docker](https://github.com/lephleg/nano-node-docker) - Recommended for Representative Nodes (w/ SSL)
+- [Nano Vanity](https://github.com/PlasmaPower/nano-vanity) - Generate Vanity Nano Addresses
+- [Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) - Docs for Node Monitor.
+
 ## Credits
 
 - [@lephleg/nano-node-docker](https://github.com/lephleg/nano-node-docker)
