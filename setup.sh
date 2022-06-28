@@ -320,7 +320,7 @@ done
 nodeExec="docker exec -it nano-node /usr/bin/nano_node"
 
 # WALLET SETUP
-sed -i 's/enable_control = false/enable_control = true/g' ~/nano-docker/nano-node/Nano/config-rpc.toml
+sed -i 's/enable_control = false/enable_control = true/g' ./nano-node/Nano/config-rpc.toml
 
 existedWallet="$(${nodeExec} --wallet_list | grep 'Wallet ID' | awk '{ print $NF}')"
 
