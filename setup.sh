@@ -375,7 +375,7 @@ if [ $monitor = 'true' ]; then
 
     sed -i -e "s/\/\/ \$nanoNodeName.*;/\$nanoNodeName = 'nano-docker-$ipAddress';/g" ./nano-node-monitor/config.php
 
-    sed -i -e "s/\/\/ \$welcomeMsg.*;/\$welcomeMsg = 'Welcome! This node was setup using <a href=\"https:\/\/github.com\/fwd\/node-docker\" target=\"_blank\">Nano Docker<\/a>!';/g" ./nano-node-monitor/config.php
+    sed -i -e "s/\/\/ \$welcomeMsg.*;/\$welcomeMsg = 'Welcome! This node was setup using <a href=\"https:\/\/github.com\/fwd\/nano-docker\" target=\"_blank\">Nano Docker<\/a>!';/g" ./nano-node-monitor/config.php
     
     sed -i -e "s/\/\/ \$blockExplorer.*;/\$blockExplorer = 'meltingice';/g" ./nano-node-monitor/config.php
 
