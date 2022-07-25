@@ -163,7 +163,7 @@ All localhost. The fastest and safest method.
 - [fwd/nano-docker](https://github.com/fwd/n1) - 1-Click Nano Node Setup **[This Github]**
 - [fwd/nano-proxy](https://github.com/fwd/nano-proxy) - A lightweight RPC server for localhost use. 
 - [fwd/nano-pow](https://github.com/fwd/nano-pow) - Nano PoW Server w/ GPU monetization.
-- [fwd/nautilus](https://github.com/fwd/nautilus) ( [iOS](https://apps.apple.com/us/app/nautilus-nano-wallet/id1615775960)/[Android](https://play.google.com/store/apps/details?id=co.perish.nautiluswallet&hl=en_US&gl=US) ) -  Natrium Clone w/ Usernames + lots more.
+- [fwd/nautilus](https://github.com/fwd/nautilus) ( [iOS](https://apps.apple.com/us/app/nautilus-nano-wallet/id1615775960)/[Android](https://play.google.com/store/apps/details?id=co.perish.nautiluswallet&hl=en_US&gl=US) ) -  Natrium fork, with improvements.
 
 ## Community Packages
 
