@@ -159,7 +159,10 @@ All localhost. The fastest and safest method.
 
 ## Nano.to Packages
 
-- [n1 - Nano Node CLI](https://github.com/fwd/n1) - A high performance command line interface for managing Nano nodes and Nano.to.
+- [n1 - Nano Node CLI](https://github.com/fwd/n1) - Development tool.
+- [Nano RPC Proxy](https://github.com/fwd/nano-proxy) - A lightweight RPC server for localhost use. 
+- [Nano PoW Server](https://github.com/fwd/nano-pow) - PoW Server for Self, and/or PoW GPU monetization.
+- Nautilus Wallet - [iOS](https://apps.apple.com/us/app/nautilus-nano-wallet/id1615775960)/[Android](https://play.google.com/store/apps/details?id=co.perish.nautiluswallet&hl=en_US&gl=US) Open Source Natrium Clone w/ Lots of Improvements. 
 
 ## Community Packages
 
