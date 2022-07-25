@@ -160,7 +160,7 @@ All localhost. The fastest and safest method.
 
 ## Nano.to Packages
 
-- [n1 - Nano Node Manager](https://github.com/fwd/n1) - A high performance command line interface for managing Nano nodes and Nano.to.
+- [n1 - Nano Node CLI](https://github.com/fwd/n1) - A high performance command line interface for managing Nano nodes and Nano.to.
 
 ## Community Packages
 
