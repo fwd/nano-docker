@@ -77,7 +77,7 @@ This script does A LOT. It's important to understand what is happening behind th
 
 ```bash
 # Install Basic Tools
-sudo apt-get -y jq install curl p7zip-full
+sudo apt-get -y install jq curl p7zip-full
 
 # Add Docker PGP Key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -122,13 +122,12 @@ cd ~/nano-docker
 sudo ./setup.sh -s -v V23.3 -p 80
 ```
 
-#### 4. Launch Node (24/7)
+#### 4. Configure Node
 
 - Script [unlocks](https://docs.nano.org/running-a-node/wallet-setup/#update-configuration) Wallet RPC.
 - Node is set up on localhost port 7076. Use '[::1]:7076' for IPv6.
 - Node Websocket set up on localhost port 7078. Use '[::1]:7078' for IPv6.
 - Node cannot be accessed from Internet by default. Bring your own "Proxy".
-
 - See [setup.sh](/setup.sh) for complete setup script.
 - See [docker-compose.yml](/docker-compose.yml) for network bindings created.
 
