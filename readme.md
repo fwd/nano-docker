@@ -8,7 +8,7 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Express Install
+## ❯ Express
 
 ```bash
 
@@ -17,7 +17,7 @@ curl -L "https://github.com/fwd/nano-docker/raw/master/install.sh" | sh
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Custom Install
+## ❯ Custom
 
 ```bash
 git clone https://github.com/fwd/nano-docker.git
