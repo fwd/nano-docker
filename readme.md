@@ -170,6 +170,7 @@ All localhost. The fastest and safest method.
 - [Nano Vanity](https://github.com/PlasmaPower/nano-vanity) - Generate Vanity Nano Addresses
 - [Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) - Docs for Node Monitor.
 - [Pippin Wallet](https://github.com/appditto/pippin_nano_wallet) - Enterprise Wallet (Difficulty: High).
+- **[More Projects](https://nano.casa)**
 
 ## Credits
 
@@ -185,7 +186,7 @@ Contributions, issues and feature requests are welcome at [issues page](https://
 
 MIT License
 
-Copyright © [@nano2dev](https://twitter.com/nano2dev).
+Copyright [@nano2dev](https://twitter.com/nano2dev).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
