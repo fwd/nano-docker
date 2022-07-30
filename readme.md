@@ -1,6 +1,6 @@
-<a href="https://github.com/fwd/n1" target="_blank">
+<a href="https://github.com/fwd/n2" target="_blank">
   <p align="center">
-    <img src="https://github.com/fwd/n1/raw/master/.github/banner.png" alt="Prompts" width="500" />
+    <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="n2" />
   </p>
 </a>
 
