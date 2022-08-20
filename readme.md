@@ -119,10 +119,10 @@ sudo ./setup.sh -s
 
 #### 4. Configure Node
 
-- Script [unlocks](https://docs.nano.org/running-a-node/wallet-setup/#update-configuration) Wallet RPC.
-- Node is set up on localhost port 7076. Use '[::1]:7076' for IPv6.
+- [Unlock](https://docs.nano.org/running-a-node/wallet-setup/#update-configuration) Wallet RPC.
+- Set up Node on localhost port 7076. Use '[::1]:7076' for IPv6.
 - Node Websocket set up on localhost port 7078. Use '[::1]:7078' for IPv6.
-- Node cannot be accessed from Internet by default. Bring your own "Proxy".
+- Node **not** be accessible from Internet. Bring your own "Proxy".
 - See [setup.sh](/setup.sh) for complete setup script.
 - See [docker-compose.yml](/docker-compose.yml) for network bindings created.
 
