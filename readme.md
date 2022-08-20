@@ -1,8 +1,6 @@
-<a href="https://github.com/fwd/n2" target="_blank">
-  <p align="center">
-    <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="n2" width="450" />
-  </p>
-</a>
+<p align="center">
+  <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="n2" width="450" />
+</p>
 
 <h1 align="center">1-Click Nano Node</h1>
 
