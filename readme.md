@@ -41,14 +41,14 @@ cd nano-docker && sudo ./setup.sh -f -t V23.1 -m -p 8080
 
 **Software:**
 
-- Ubuntu (Supported)
-- Other Linux (Coming Soon)
-- Mac (Coming Soon)
-- Window (Coming Soon)
+- Ubuntu/Debian ✅
+- Other Linux ❌
+- Mac ❌
+- Window ❌
 
 **Minimum Hardware:**
 
-- 2 vCPU
+- 2 CPU
 - 4GB RAM
 - 160GB SSD
 - 1TB BANDWIDTH
