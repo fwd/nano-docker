@@ -138,10 +138,11 @@ $ curl -g -d '{ "action": "block_count" }' '[::1]:7076'
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 ```
 
+[Nano RPC Docs](https://docs.nano.org/commands/rpc-protocol/#wallet-rpcs)
+
 ## Further Reading
 
-- [Official CLI Docs](https://docs.nano.org/commands/rpc-protocol)
-- [Official Wallet RPC Docs](https://docs.nano.org/commands/rpc-protocol/#wallet-rpcs)
+- [Official Node CLI Docs](https://docs.nano.org/commands/rpc-protocol)
 - [Common RPC Errors](https://docs.nano.to/rpc-errors)
 - [Nano.to Docs](https://docs.nano.to)
 - [**More Packages**](https://github.com/fwd/nano-packages)
