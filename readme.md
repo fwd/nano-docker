@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="n2" width="380" />
+  <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="n2" width="320" />
 </p>
 
 <h1 align="center">1-Click Nano Node</h1>
