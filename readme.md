@@ -124,7 +124,6 @@ sudo ./setup.sh -s
 - Node Websocket set up on localhost port 7078. Use '[::1]:7078' for IPv6.
 - Node **not** be accessible from Internet. Bring your own "Proxy".
 - See [setup.sh](/setup.sh) for complete setup script.
-- See [docker-compose.yml](/docker-compose.yml) for network bindings created.
 
 #### 5. Talk to Node
 
