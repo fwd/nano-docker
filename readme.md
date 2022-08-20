@@ -128,9 +128,7 @@ sudo ./setup.sh -s
 - See [setup.sh](/setup.sh) for complete setup script.
 - See [docker-compose.yml](/docker-compose.yml) for network bindings created.
 
-#### 5. Test Node
-
-The script adds a ```nano-node``` alias to your **~/.bash_aliases** file.
+#### 5. Talk to Node
 
 ```
 Usage:
