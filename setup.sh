@@ -11,7 +11,7 @@
 #################################################
 
 # VERSION
-version='0.2'
+version='1.1'
 
 # OUTPUT VARS
 red=`tput setaf 1`
@@ -45,6 +45,7 @@ monitor='false'
 fi
 
 if [[ "$1" == "-p" ]] || [[ "$2" == "-p" ]] || [[ "$3" == "-p" ]] || [[ "$4" == "-p" ]] || [[ "$5" == "-p" ]] || [[ "$6" == "-p" ]] || [[ "$7" == "-p" ]] || [[ "$8" == "-p" ]]; then
+    if [[ "$1" == "-p" ]]; then port=$2; fi;
     if [[ "$2" == "-p" ]]; then port=$3; fi;
     if [[ "$3" == "-p" ]]; then port=$4; fi;
     if [[ "$4" == "-p" ]]; then port=$5; fi;
@@ -55,6 +56,7 @@ if [[ "$1" == "-p" ]] || [[ "$2" == "-p" ]] || [[ "$3" == "-p" ]] || [[ "$4" == 
 fi
 
 if [[ "$1" == "-t" ]] || [[ "$2" == "-t" ]] || [[ "$3" == "-t" ]] || [[ "$4" == "-t" ]] || [[ "$5" == "-t" ]] || [[ "$6" == "-t" ]] || [[ "$7" == "-t" ]] || [[ "$8" == "-t" ]]; then
+    if [[ "$1" == "-t" ]]; then tag=$2; fi;
     if [[ "$2" == "-t" ]]; then tag=$3; fi;
     if [[ "$3" == "-t" ]]; then tag=$4; fi;
     if [[ "$4" == "-t" ]]; then tag=$5; fi;
@@ -65,6 +67,7 @@ if [[ "$1" == "-t" ]] || [[ "$2" == "-t" ]] || [[ "$3" == "-t" ]] || [[ "$4" == 
 fi
 
 if [[ "$1" == "-v" ]] || [[ "$2" == "-v" ]] || [[ "$3" == "-v" ]] || [[ "$4" == "-v" ]] || [[ "$5" == "-v" ]] || [[ "$6" == "-v" ]] || [[ "$7" == "-v" ]] || [[ "$8" == "-v" ]]; then
+    if [[ "$1" == "-v" ]]; then tag=$2; fi;
     if [[ "$2" == "-v" ]]; then tag=$3; fi;
     if [[ "$3" == "-v" ]]; then tag=$4; fi;
     if [[ "$4" == "-v" ]]; then tag=$5; fi;
@@ -76,11 +79,12 @@ fi
 
 # PRINT INSTALLER DETAILS
 [[ $quiet = 'false' ]] && echo ""
-[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
-[[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE ${reset}"
-[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
-[[ $quiet = 'false' ]] && echo "${green}${bold}by @nano2dev${reset}"
-[[ $quiet = 'false' ]] && echo "${green}=================================${reset}"
+[[ $quiet = 'false' ]] && echo "${green}================================${reset}"
+[[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE${reset}"
+[[ $quiet = 'false' ]] && echo "${green}================================${reset}"
+[[ $quiet = 'false' ]] && echo "${green}${bold}https://nano.to${reset}"
+[[ $quiet = 'false' ]] && echo "${green}==============v$version==============${reset}"
+# [[ $quiet = 'false' ]] && echo ""
 # [[ $quiet = 'false' ]] && echo ""
 
 sleep 1
@@ -98,7 +102,22 @@ fi
 
 if [[ -z $port ]]; then port='80'; fi
 
-if [[ -z $tag ]]; then tag=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r); fi
+## Prone to get Rate limited by Github
+# latest=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r)
+
+# Hardcode for now.. That's always a good idea, right?
+latest='V23.3'
+
+if [[ -z $tag ]]; then
+    tag='V23.1'
+    echo "${yellow}NOTE:${reset} Latest Nano Node V23.3 is unable to self sync. Installing V23.1 for syncing. Run './setup.sh -t $latest' after syncing to upgrade."
+fi
+
+# echo $tag
+# if [[ -z $tag ]]; then tag=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r); fi
+# tag='V23.1'
+
+# exit 1
 
 # Development
 # echo "quiet", $quiet
@@ -136,12 +155,6 @@ else
     exit 1
 fi
 
-echo $@ > settings
-
-# ================================
-# This is either genius or dumb. 
-# ================================
-# Time will tell.
 DEFAULT_COMPOSE=$(cat <<EOF
 version: '3'
 services:
@@ -203,9 +216,8 @@ EOF
 docker -v &> /dev/null
 if [ $? -ne 0 ]; then
 
-    echo "Installing Docker"
-
     # Docs: https://docs.docker.com/engine/install/ubuntu
+    echo "Installing Docker..."
 
     # Basics
     sudo apt-get -y install curl p7zip-full
@@ -226,7 +238,7 @@ fi
 
 docker-compose --version &> /dev/null
 if [ $? -ne 0 ]; then
-    echo "Installing Docker Compose"
+    echo "Installing Docker Compose..."
     curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
     sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
@@ -384,6 +396,7 @@ if [ $monitor = 'true' ]; then
 fi
 
 if [[ "$quiet" = "false" ]]; then
+
     echo "=========================================="
     echo "     ${green}Welcome to the Nano Blockchain${reset}         "
     echo "=========================================="
