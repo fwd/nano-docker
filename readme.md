@@ -60,19 +60,17 @@ cd nano-docker && sudo ./setup.sh -f -t V23.1 -m -p 8080
 
 ### Free Cloud Server \($100 / 3 Months\)
 
-You can support Nano.to (makers of this script) by using this Digital Ocean referral link:
-
 https://m.do.co/c/f139acf4ddcb
+
+> Supports Nano.to (makers of this script)
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-Further Reading: [How To Setup a Server on Digital Ocean](https://docs.digitalocean.com/products/droplets/how-to/create/)
+Optional Reading: [How To Setup a Server on Digital Ocean](https://docs.digitalocean.com/products/droplets/how-to/create/)
 
 ---
 
 ### Understand The Magic (Optional)
-
-This script does A LOT. It's important to understand what is happening behind the scenes. 
 
 #### 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu)
 
@@ -110,8 +108,6 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 #### 3. Install Nano Docker
 
-After everything is prepared. We can finally run the script in this Repo.
-
 ```bash
 # Move to HOME, and clone repo
 cd ~ && git clone https://github.com/fwd/nano-docker.git
@@ -119,8 +115,8 @@ cd ~ && git clone https://github.com/fwd/nano-docker.git
 # For "Docker" reasons. We need to move in the cloned dir.
 cd ~/nano-docker
 
-# Always installs latest version
-sudo ./setup.sh -s -v V23.3 -p 80
+# Leave -v blank for latest version
+sudo ./setup.sh -s
 ```
 
 #### 4. Configure Node
@@ -141,14 +137,13 @@ Usage:
 $ nano-node  --help
 ```
 
-Or talk to the Local node with CURL.
-
 ```bash
 Usage:
+$ curl -g -d '{ "action": "version" }' '[::1]:7076'
+$ curl -g -d '{ "action": "block_count" }' '[::1]:7076'
+$ curl -g -d '{ "action": "block_count" }' '[::1]:7076'
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 ```
-
-All localhost. The fastest and safest method.
 
 ## Further Reading
 
@@ -156,30 +151,7 @@ All localhost. The fastest and safest method.
 - [Official Wallet RPC Docs](https://docs.nano.org/commands/rpc-protocol/#wallet-rpcs)
 - [Common RPC Errors](https://docs.nano.to/rpc-errors)
 - [Nano.to Docs](https://docs.nano.to)
-- [More Packages](https://nano.casa)
-
-## Nano.to Packages
-
-- [fwd/nano-cli](https://github.com/fwd/n1) - Nano Node Command Line Tool.
-- [fwd/nano-docker](https://github.com/fwd/n1) - 1-Click Nano Node Setup **[This Github]**
-- [fwd/nano-proxy](https://github.com/fwd/nano-proxy) - A lightweight RPC server for localhost use. 
-- [fwd/nano-pow](https://github.com/fwd/nano-pow) - Nano PoW Server w/ GPU monetization.
-- [fwd/nautilus](https://github.com/fwd/nautilus) ( [iOS](https://apps.apple.com/us/app/nautilus-nano-wallet/id1615775960)/[Android](https://play.google.com/store/apps/details?id=co.perish.nautiluswallet&hl=en_US&gl=US) ) -  Natrium fork, with improvements.
-
-## Community Packages
-
-- [Full Node RPC](https://github.com/Joohansson/NanoRPCProxy) - A RPC PRoxy (w/ PoW Monetization)
-- [Nault](https://github.com/Nault/Nault) - Self-Hosted Web Wallet
-- [nanocurrency-js](https://github.com/marvinroger/nanocurrency-js) - Toolkit for Nano cryptocurrency client side offline integrations without requiring NodeJS functions
-- [Original Node Docker](https://github.com/lephleg/nano-node-docker) - Recommended for Representative Nodes (w/ SSL)
-- [Nano Vanity](https://github.com/PlasmaPower/nano-vanity) - Generate Vanity Nano Addresses
-- [Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) - Docs for Node Monitor.
-- [Pippin Wallet](https://github.com/appditto/pippin_nano_wallet) - Enterprise Wallet (Difficulty: High).
-- **[More Projects](https://nano.casa)**
-
-## Credits
-
-- [@lephleg/nano-node-docker](https://github.com/lephleg/nano-node-docker)
+- [**More Packages**](https://github.com/fwd/nano-packages)
 
 ## Contributing
 
