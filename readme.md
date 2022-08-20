@@ -130,11 +130,6 @@ sudo ./setup.sh -s
 
 #### 5. Talk to Node
 
-```
-Usage:
-$ nano-node  --help
-```
-
 ```bash
 Usage:
 $ curl -g -d '{ "action": "version" }' '[::1]:7076'
