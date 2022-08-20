@@ -6,7 +6,7 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-## ❯ Express
+## ❯ Quick
 
 ```bash
 curl -L "https://fwd.github.io/nano-docker/install.sh" | sh
