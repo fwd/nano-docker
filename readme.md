@@ -91,7 +91,7 @@ sudo apt-get update
 sudo apt-get -y install jq docker-ce docker-ce-cli containerd.io
 ```
 
-#### 2. Install Docker Compose
+#### 2. Install [Docker Compose](https://docs.docker.com/compose/)
 
 ```bash
 # Download latest script.
@@ -104,7 +104,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-#### 3. Install Nano Docker
+#### 3. Install This Repo
 
 ```bash
 # Move to HOME, and clone repo
