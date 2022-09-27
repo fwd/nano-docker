@@ -9,7 +9,7 @@
 ## ❯ Quick
 
 ```bash
-curl -L "https://fwd.github.io/nano-docker/install.sh" | sh
+curl -L "https://raw.github.com/fwd/nano-docker/master/install.sh" | sh
 ```
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
