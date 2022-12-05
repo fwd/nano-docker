@@ -6,6 +6,10 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
+> ### Nano Node v24 brings better bootstrapping. As soon as it's available, we'll update this script.
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
 ## ❯ Quick
 
 ```bash
@@ -23,8 +27,6 @@ git clone https://github.com/fwd/nano-docker.git
 ```bash
 cd nano-docker && sudo ./setup.sh -f -t V23.1 -m -p 8080
 ```
-
-> Latest Nano Node V23.3 is unable to self sync. We recommend installing V23.1 for syncing. Then './setup.sh -t V23.3' after syncing, to upgrade.
 
 #### Flags
 - **-f**: Enable Fast Sync (Default: True)
