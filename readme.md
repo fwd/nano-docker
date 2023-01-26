@@ -4,7 +4,7 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-> #### Nano Node v25 brings better bootstrapping. When vailable, we'll update this script.
+> #### Nano Node v25 brings better bootstrapping. When available, we'll update this script.
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
