@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="n2" width="600" />
+  <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="n2" width="400" />
 </p>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-> ### Nano Node v25 brings better bootstrapping. Whebn vailable, I'll update this script.
+> #### Nano Node v25 brings better bootstrapping. Whebn vailable, we'll update this script.
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
