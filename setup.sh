@@ -106,16 +106,16 @@ if [[ -z $port ]]; then port='80'; fi
 # latest=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r)
 
 # Hardcode for now.. That's always a good idea, right?
-latest='V23.3'
+latest='V24'
 
 if [[ -z $tag ]]; then
-    tag='V23.1'
-    echo "${yellow}Note:${reset} Latest Nano Node V23.3 is unable to self sync. Installing V23.1 for syncing. Run './setup.sh -t $latest' after syncing is complete to upgrade."
+    tag='V24'
+    echo "${yellow}Note:${reset} Latest Nano Node V24 is unable to self sync. Installing V24 for syncing. Run './setup.sh -t $latest' after syncing is complete to upgrade."
 fi
 
 # echo $tag
 # if [[ -z $tag ]]; then tag=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r); fi
-# tag='V23.1'
+# tag='V24'
 
 # exit 1
 
