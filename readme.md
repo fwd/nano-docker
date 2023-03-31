@@ -19,17 +19,17 @@ git clone https://github.com/fwd/nano-docker.git
 ```
 
 ```bash
-cd nano-docker && sudo ./setup.sh -f -t V24 -m -p 8080
+cd nano-docker && sudo ./setup.sh -f -t V24.0 -m -p 8080
 ```
 
 #### Flags
-- **-f**: Enable Fast Sync (Default: True)
-- **-t**: Install specific Node Version (Default: Latest)
-- **-m**: Install [Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
-- **-p**: Set Node Monitor Port (Default: 80)
-- **-q**: No Console Output (Default: False)
-- **-s**: Print out Private Key (Default: False)
-- **-v**: Alias of **-t**
+- **-f**: Fast Sync (Default: True)
+- **-t**: Node Version (Default: Latest)
+- **-m**: Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
+- **-p**: Node Monitor Port (Default: 80)
+- **-q**: Console Output (Default: False)
+- **-s**: Print Private Key (Default: False)
+- **-v**: Alias of **-t**. Because life.
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
@@ -38,16 +38,16 @@ cd nano-docker && sudo ./setup.sh -f -t V24 -m -p 8080
 **Software:**
 
 - Ubuntu/Debian ✅
-- Other Linux ❌
-- Mac ❌
-- Window ❌
+- Other Linux ❌ 
+- Mac ❌ (Run Ubuntu in VM)
+- Window ❌ (Run Ubuntu in VM)
 
 **Minimum Hardware:**
 
-- 2 CPU
+- 4 CPU
 - 4GB RAM
-- 160GB SSD
-- 1TB BANDWIDTH
+- 180GB SSD
+- 1TB/M BANDWIDTH
 - ON 24/7
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
@@ -129,6 +129,16 @@ $ curl -g -d '{ "action": "version" }' '[::1]:7076'
 $ curl -g -d '{ "action": "block_count" }' '[::1]:7076'
 $ curl -g -d '{ "action": "block_count" }' '[::1]:7076'
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
+```
+
+#### Get Node Docker IP
+
+```
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+```
+
+```
+nano-node - 172.17.0.4
 ```
 
 [Nano RPC Docs](https://docs.nano.org/commands/rpc-protocol/#wallet-rpcs)
