@@ -138,7 +138,7 @@ docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}
 ```
 
 ```
-nano-node - 172.17.0.4
+nano-node - 172.XX.X.X
 ```
 
 [Nano RPC Docs](https://docs.nano.org/commands/rpc-protocol/#wallet-rpcs)
