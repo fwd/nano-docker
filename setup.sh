@@ -82,8 +82,8 @@ fi
 [[ $quiet = 'false' ]] && echo "${green}================================${reset}"
 [[ $quiet = 'false' ]] && echo "${green}${bold}1-CLICK NANO NODE${reset}"
 [[ $quiet = 'false' ]] && echo "${green}================================${reset}"
-[[ $quiet = 'false' ]] && echo "${green}${bold}https://nano.to${reset}"
-[[ $quiet = 'false' ]] && echo "${green}==============v$version==============${reset}"
+[[ $quiet = 'false' ]] && echo "${green}${bold}github.com/fwd/nano-docker${reset}"
+[[ $quiet = 'false' ]] && echo "${green}============================${reset}"
 # [[ $quiet = 'false' ]] && echo ""
 # [[ $quiet = 'false' ]] && echo ""
 
@@ -106,16 +106,12 @@ if [[ -z $port ]]; then port='80'; fi
 # latest=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r)
 
 # Hardcode for now.. That's always a good idea, right?
-latest='V24'
+latest='V24.0'
 
 if [[ -z $tag ]]; then
-    tag='V24'
+    tag='V24.0'
     echo "${yellow}Note:${reset} Latest Nano Node V24 is unable to self sync. Installing V24 for syncing. Run './setup.sh -t $latest' after syncing is complete to upgrade."
 fi
-
-# echo $tag
-# if [[ -z $tag ]]; then tag=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r); fi
-# tag='V24'
 
 # exit 1
 
