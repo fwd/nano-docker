@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="n2" width="400" />
+  <h1 align="center">Nano Docker</h1>
 </p>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
