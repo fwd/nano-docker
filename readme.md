@@ -1,8 +1,6 @@
 <p align="center">
-  <h1 align="center">Nano Docker</h1>
+  <h1>Nano Docker</h1>
 </p>
-
-![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
 ## ❯ Quick
 
