@@ -1,5 +1,5 @@
 <p align="center">
-  <h1>Nano Docker</h1>
+  <h1>1-Click Nano Node</h1>
 </p>
 
 ## ❯ Quick
