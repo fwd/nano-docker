@@ -23,7 +23,7 @@ cd nano-docker && sudo ./setup.sh -f -t V24.0 -m -p 8080
 #### Flags
 - **-f**: Fast Sync (Default: True)
 - **-t**: Node Version (Default: Latest)
-- **-m**: Node Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
+- **-m**: Node [Monitor](https://github.com/NanoTools/nanoNodeMonitor) (Default: False)
 - **-p**: Node Monitor Port (Default: 80)
 - **-q**: Console Output (Default: False)
 - **-s**: Print Private Key (Default: False)
@@ -129,7 +129,7 @@ $ curl -g -d '{ "action": "block_count" }' '[::1]:7076'
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 ```
 
-#### Get Node Docker IP
+#### Node Docker IP
 
 ```
 docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
@@ -138,8 +138,6 @@ docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}
 ```
 nano-node - 172.XX.X.X
 ```
-
-[Nano RPC Docs](https://docs.nano.org/commands/rpc-protocol/#wallet-rpcs)
 
 ## Further Reading
 
