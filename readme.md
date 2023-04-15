@@ -125,7 +125,6 @@ sudo ./setup.sh -s
 Usage:
 $ curl -g -d '{ "action": "version" }' '[::1]:7076'
 $ curl -g -d '{ "action": "block_count" }' '[::1]:7076'
-$ curl -g -d '{ "action": "block_count" }' '[::1]:7076'
 $ curl -g -d '{ "action": "telemetry" }' '[::1]:7076'
 ```
 
