@@ -1,6 +1,8 @@
-<p align="center">
-  <h1>1-Click Nano Node</h1>
-</p>
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
+<h1 align="center"1>1-Click Nano Node</h1>
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
 ## ❯ Quick
 
@@ -47,6 +49,12 @@ cd nano-docker && sudo ./setup.sh -f -t V24.0 -m -p 8080
 - 180GB SSD
 - 1TB/M BANDWIDTH
 - ON 24/7
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
+<a align="center" target="_blank" href="https://simpleswap.io/?ref=ecc1985b556a"><img style="object-fit: contain;
+    max-width: 100%;" src="https://files.simpleswap.io/banners/970x90_EN_fast-and-secure.png" width="970" /></a>
+
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
