@@ -50,19 +50,13 @@ cd nano-docker && sudo ./setup.sh -f -t V24.0 -m -p 8080
 - 1TB/M BANDWIDTH
 - ON 24/7
 
+
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
+## Sponsor (DigitalOcean)
 
 <a align="center" target="_blank" href="https://simpleswap.io/?ref=ecc1985b556a"><img style="object-fit: contain;
-    max-width: 100%;" src="https://files.simpleswap.io/banners/970x90_EN_fast-and-secure.png" width="970" /></a>
-
-
-![line](https://github.com/fwd/n2/raw/master/.github/line.png)
-
-### Free Cloud Server \($100 / 3 Months\)
-
-https://m.do.co/c/f139acf4ddcb
-
-> Supports Nano.to (makers of this script)
+    max-width: 100%;" src="https://github.com/fwd/fwd/raw/master/ads/digitalocean.png" width="970" /></a>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
