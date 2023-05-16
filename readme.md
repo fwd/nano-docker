@@ -1,5 +1,7 @@
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
+<img src="https://repository-images.githubusercontent.com/501828214/eb7fe2ec-792e-415c-9eaf-365cdfc87aac"/>
+
 <h1 align="center"1>1-Click Nano Node</h1>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
