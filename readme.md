@@ -64,7 +64,7 @@ Optional Reading: [How To Setup a Server on Digital Ocean](https://docs.digitalo
 
 ---
 
-### Understand The Magic (Optional)
+### Understand The Magic 🪄 (Optional)
 
 #### 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu)
 
