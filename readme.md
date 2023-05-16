@@ -45,11 +45,10 @@ cd nano-docker && sudo ./setup.sh -f -t V24.0 -m -p 8080
 **Minimum Hardware:**
 
 - 4 CPU
-- 4GB RAM
-- 180GB SSD
-- 1TB/M BANDWIDTH
+- 8GB RAM
+- 512GB SSD
+- 1TB BANDWIDTH
 - ON 24/7
-
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
