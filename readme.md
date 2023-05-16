@@ -139,16 +139,6 @@ docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}
 nano-node - 172.XX.X.X
 ```
 
-#### Nano Ledger Download
-
-```
-https://s3.us-east-2.amazonaws.com/repo.nano.org/snapshots/latest
-```
-
-**Aprox. 105GB (As of May 2023)**
-
-> Nano is a store of value only. Because of this, the ledger does not increase much year to year.  
-
 ## Further Reading
 
 - [Official Node CLI Docs](https://docs.nano.org/commands/rpc-protocol)
