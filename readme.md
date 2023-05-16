@@ -46,7 +46,7 @@ cd nano-docker && sudo ./setup.sh -f -t V24.0 -m -p 8080
 
 - 4 CPU
 - 8GB RAM
-- 512GB SSD
+- 512GB SSD (Current Nano Ledger ~103GB 7Zip)
 - 1TB BANDWIDTH
 - ON 24/7
 
@@ -138,6 +138,16 @@ docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}
 ```
 nano-node - 172.XX.X.X
 ```
+
+#### Nano Ledger Download
+
+```
+https://s3.us-east-2.amazonaws.com/repo.nano.org/snapshots/latest
+```
+
+**Aprox. 105GB (As of May 2023)**
+
+> Nano is a store of value only. Because of this, the ledger does not increase much year to year.  
 
 ## Further Reading
 
