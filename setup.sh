@@ -110,7 +110,6 @@ latest='V25.0'
 
 if [[ -z $tag ]]; then
     tag='V25.0'
-    echo "${yellow}Note:${reset} Latest Nano Node V24 is unable to self sync. Installing V24 for syncing. Run './setup.sh -t $latest' after syncing is complete to upgrade."
 fi
 
 # exit 1
