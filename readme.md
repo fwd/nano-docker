@@ -19,7 +19,7 @@ git clone https://github.com/fwd/nano-docker.git
 ```
 
 ```bash
-cd nano-docker && sudo ./setup.sh -f -t V24.0 -m -p 8080
+cd nano-docker && sudo ./setup.sh -f -t V25.0 -m -p 8080
 ```
 
 #### Flags
