@@ -4,6 +4,10 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
+> V25.0 IS HERE
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
 ## ❯ Quick
 
 ```bash
