@@ -46,7 +46,7 @@ cd nano-docker && sudo ./setup.sh -f -t V25.1 -m -p 8080
 
 - 4 CPU
 - 8GB RAM
-- 320 GB SSD (Ledger: ~110GB 7Zip, Attached storage recommended)
+- 320 GB SSD (Ledger: ~110GB 7Zip, Expandable attached storage recommended)
 - 1TB BANDWIDTH
 - ON 24/7
 
