@@ -106,10 +106,10 @@ if [[ -z $port ]]; then port='80'; fi
 # latest=$(curl -s https://api.github.com/repos/nanocurrency/nano-node/releases/latest -s | jq .name -r)
 
 # Hardcode for now.. That's always a good idea, right?
-latest='V25.1'
+latest='V26.1'
 
 if [[ -z $tag ]]; then
-    tag='V25.1'
+    tag='V26.1'
 fi
 
 # exit 1
